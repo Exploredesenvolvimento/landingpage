@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sua empresa está jogando para vencer ou para continuar jogando? | EXPLORE</title>
+<meta name="description" content="Como a lógica do jogo infinito muda a forma de tomar decisão em uma PME em crescimento.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#612B4A">
+<link rel="canonical" href="https://exploredesenvolvimento.github.io/landingpage/artigos/jogo-infinito.html">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sua empresa está jogando para vencer ou para continuar jogando? | EXPLORE">
+<meta property="og:description" content="Como a lógica do jogo infinito muda a forma de tomar decisão em uma PME em crescimento.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://exploredesenvolvimento.github.io/landingpage/artigos/jogo-infinito.html">
+<meta property="og:image" content="https://exploredesenvolvimento.github.io/landingpage/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Sua empresa está jogando para vencer ou para continuar jogando?",
+  "description": "Como a lógica do jogo infinito muda a forma de tomar decisão em uma PME em crescimento.",
+  "author": { "@type": "Organization", "name": "EXPLORE Desenvolvimento de Gente e Gestão" },
+  "publisher": { "@type": "Organization", "name": "EXPLORE Desenvolvimento de Gente e Gestão" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://exploredesenvolvimento.github.io/landingpage/" },
+    { "@type": "ListItem", "position": 2, "name": "Conteúdo", "item": "https://exploredesenvolvimento.github.io/landingpage/insights.html" },
+    { "@type": "ListItem", "position": 3, "name": "Sua empresa está jogando para vencer ou para continuar jogando?", "item": "https://exploredesenvolvimento.github.io/landingpage/artigos/jogo-infinito.html" }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bordeaux: #612B4A;
+    --bordeaux-escuro: #431E33;
+    --brass: #B8863E;
+    --brass-text: #8A5F26;
+    --paper: #FBF9F6;
+    --paper-alt: #F3EEE8;
+    --ink: #221A1E;
+    --ink-soft: #5B4F55;
+    --line: #E4DCD3;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+  a:focus-visible, button:focus-visible{ outline: 2px solid var(--brass); outline-offset: 3px; }
+  body{
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color: inherit; }
+  .wrap{ max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  h1,h2,h3{ font-weight: 700; line-height: 1.18; font-family: Georgia, "Times New Roman", serif; color: var(--bordeaux-escuro); }
+  .kicker{ color: var(--brass-text); font-weight: 600; letter-spacing: 0.02em; margin-bottom: 10px; display:block; font-family: Calibri, sans-serif; }
+
+  header{ position: sticky; top:0; z-index: 50; background: rgba(251,249,246,0.96); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  header .wrap{ position: relative; }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding: 18px 0; gap: 24px; }
+  .logo{ display:flex; align-items:center; }
+  .logo img{ height: 34px; width:auto; }
+  .nav-links{ display:flex; gap: 26px; list-style:none; align-items:center; }
+  .nav-links a{ text-decoration:none; font-size:14.5px; color: var(--ink-soft); font-family: Calibri, sans-serif; white-space:nowrap; margin-right:26px; }
+  .nav-links a:last-child{ margin-right:0; }
+  .nav-links a:hover{ color: var(--bordeaux); }
+  .nav-cta{ display:flex; align-items:center; gap:16px; }
+  .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; flex-direction:column; gap:5px; }
+  .nav-toggle span{ width:22px; height:2px; background: var(--bordeaux); display:block; }
+  .nav-links.aberto{ display:flex; }
+  .btn{ display:inline-block; padding: 13px 26px; border-radius: 4px; background: var(--bordeaux); color:#fff; text-decoration:none; font-weight:600; font-size:15px; border:none; cursor:pointer; font-family: Calibri, sans-serif; }
+  .btn:hover{ background: var(--bordeaux-escuro); }
+
+  article{ padding: 56px 0 40px; }
+  article .wrap{ max-width: 720px; }
+  .tag{ font-size:12.5px; color: var(--brass-text); font-weight:700; margin-bottom:12px; font-family: Calibri, sans-serif; }
+  article h1{ font-size: 34px; margin-bottom: 26px; letter-spacing:-0.01em; }
+  article p{ color: var(--ink); font-size: 16.5px; margin-bottom: 18px; max-width: 640px; }
+  .voltar{ display:inline-block; margin-top: 14px; font-size:14px; color: var(--bordeaux); text-decoration:underline; text-underline-offset:3px; font-weight:600; font-family: Calibri, sans-serif; }
+
+  .relacionados{ background: var(--paper-alt); padding: 56px 0; }
+  .relacionados .wrap{ max-width: 1120px; }
+  .relacionados h2{ font-size: 20px; margin-bottom: 22px; }
+  .rel-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border:1px solid var(--line); }
+  .rel-card{ background: var(--paper); padding: 24px; text-decoration:none; display:block; }
+  .rel-card .tag{ margin-bottom: 8px; }
+  .rel-card h3{ font-size:15.5px; color: var(--bordeaux-escuro); font-family: Calibri, sans-serif; font-weight:700; }
+
+  .cta-final{ background: var(--bordeaux); color:#fff; text-align:center; padding: 64px 0; }
+  .cta-final h2{ color:#fff; margin-bottom: 14px; font-size: 26px; }
+  .cta-final p{ color:#E8D9DE; margin-bottom: 26px; font-family: Calibri, sans-serif; }
+  .cta-final .btn{ background: var(--brass); color: var(--bordeaux-escuro); }
+  .cta-final .btn:hover{ background:#CB9A50; }
+  .cta-final .logo-cta{ height: 28px; margin: 0 auto 20px; }
+
+  footer{ padding: 40px 0; text-align:center; font-size: 13px; color: var(--ink-soft); border-top:1px solid var(--line); font-family: Calibri, sans-serif; }
+  footer img{ height: 22px; margin: 0 auto 14px; }
+
+  @media (max-width: 860px){
+    .nav-toggle{ display:flex; }
+    .nav-links{ display:none; position:absolute; top:100%; left:0; right:0; background: var(--paper); border-bottom:1px solid var(--line); flex-direction:column; align-items:flex-start; gap:0; padding: 8px 24px 18px; }
+    .nav-links a{ padding: 12px 0; width:100%; border-bottom:1px solid var(--line); margin-right:0; }
+    .nav-links.aberto{ display:flex; }
+    article h1{ font-size: 26px; }
+    .rel-grid{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav">
+    <a href="../index.html" class="logo"><img src="../assets/logo-bordeaux.png" alt="EXPLORE Desenvolvimento de Gente e Gestão"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#quem-somos">Quem somos</a></li>
+      <li><a href="../index.html#o-que-fazemos">O que fazemos</a></li>
+      <li><a href="../index.html#servicos">Serviços</a></li>
+      <li><a href="../index.html#como-trabalhamos">Como trabalhamos</a></li>
+      <li><a href="../index.html#casos">Casos</a></li>
+      <li><a href="../index.html#diagnostico">Diagnóstico</a></li>
+      <li><a href="../insights.html">Conteúdo</a></li>
+      <li><a href="../index.html#faq">Dúvidas</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="../index.html#contato" class="btn">Falar com a gente</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+<article>
+  <div class="wrap">
+    <div class="tag">Jogo infinito</div>
+    <h1>Sua empresa está jogando para vencer ou para continuar jogando?</h1>
+    <p>Existe uma diferença importante entre jogos finitos e jogos infinitos. Um jogo finito tem regras fixas, jogadores conhecidos e um momento claro em que termina, com um vencedor. Um jogo infinito tem jogadores que entram e saem, regras que mudam com o tempo, e nenhum ponto final. O objetivo não é vencer. É continuar jogando o maior tempo possível.</p>
+    <p>Gestão de empresa é um jogo infinito. Não existe uma linha de chegada onde você "venceu o mercado" e pode parar. Existe concorrente novo, cliente que muda de comportamento, crise econômica, oportunidade que aparece do nada. Empresas que tratam a gestão como jogo finito, correndo atrás de metas trimestrais como se fossem o fim da partida, tendem a tomar decisões de curto prazo que comprometem a capacidade de continuar jogando lá na frente.</p>
+    <p>Na prática, isso muda o tipo de pergunta que a liderança faz. Em vez de "como bato a meta desse mês", a pergunta vira "essa decisão fortalece ou enfraquece minha capacidade de continuar competindo daqui a dois anos". Às vezes a resposta certa é abrir mão de um resultado imediato para proteger algo mais importante: a confiança do time, a saúde financeira, a reputação com o cliente.</p>
+    <p>Isso não significa ignorar número de curto prazo. Métrica continua sendo essencial, é o pilar que mostra se você está indo bem no jogo. A diferença é o horizonte de tempo que orienta a decisão. Empresa com mentalidade de jogo infinito constrói rotina, processo e time pensando em durar, não só em bater a meta desse trimestre.</p>
+    <a href="../insights.html" class="voltar">Voltar para todos os textos</a>
+  </div>
+</article>
+</main>
+
+<section class="relacionados">
+  <div class="wrap">
+    <h2>Continue lendo</h2>
+    <div class="rel-grid">
+      <a href="metricas-atraso.html" class="rel-card"><div class="tag">Métricas</div><h3>O número que sua empresa mede tarde demais</h3></a>
+      <a href="lideranca-gargalo.html" class="rel-card"><div class="tag">Liderança</div><h3>O gestor que resolve tudo é o gargalo da própria equipe</h3></a>
+      <a href="processo-destrava.html" class="rel-card"><div class="tag">Processos</div><h3>Processo bom não trava a empresa, destrava</h3></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <img src="../assets/logo-branca.png" alt="EXPLORE" class="logo-cta">
+    <span class="kicker" style="color:#E3B975">Vamos conversar</span>
+    <h2>Quer aplicar isso na sua empresa?</h2>
+    <p>Fale com a gente e entenda por onde começar.</p>
+    <a href="../index.html#contato" class="btn">Falar com a gente</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="../assets/logo-bordeaux.png" alt="EXPLORE">
+    EXPLORE Desenvolvimento de Gente e Gestão<br>Rio de Janeiro, RJ<br>© 2026. Todos os direitos reservados.
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', function(){
+      var aberto = links.classList.toggle('aberto');
+      toggle.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+    });
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://exploredesenvolvimento.github.io/landingpage/sitemap.xml

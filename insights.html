@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conteúdo | EXPLORE — Textos e ideias sobre gestão de PMEs</title>
+<meta name="description" content="Textos práticos da EXPLORE sobre rotina, processos, métricas, liderança e transição de complexidade em pequenas e médias empresas.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#612B4A">
+<link rel="canonical" href="https://exploredesenvolvimento.github.io/landingpage/insights.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Conteúdo | EXPLORE — Textos e ideias sobre gestão de PMEs">
+<meta property="og:description" content="Textos práticos da EXPLORE sobre rotina, processos, métricas, liderança e transição de complexidade em pequenas e médias empresas.">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://exploredesenvolvimento.github.io/landingpage/insights.html">
+<meta property="og:image" content="https://exploredesenvolvimento.github.io/landingpage/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+
+<style>
+  :root{
+    --bordeaux: #612B4A;
+    --bordeaux-escuro: #431E33;
+    --brass: #B8863E;
+    --brass-text: #8A5F26;
+    --paper: #FBF9F6;
+    --paper-alt: #F3EEE8;
+    --ink: #221A1E;
+    --ink-soft: #5B4F55;
+    --line: #E4DCD3;
+  }
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+    *{ animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+  body{
+    font-family: Calibri, "Segoe UI", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color: inherit; }
+  .wrap{ max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  section{ padding: 72px 0; }
+  h1,h2,h3{ font-weight: 700; line-height: 1.18; font-family: Georgia, "Times New Roman", serif; color: var(--bordeaux-escuro); }
+  .kicker{ color: var(--brass-text); font-weight: 600; letter-spacing: 0.02em; margin-bottom: 10px; display:block; font-family: Calibri, sans-serif; }
+  .lead{ font-size: 18px; color: var(--ink-soft); max-width: 640px; }
+
+  /* header — igual ao index */
+  header{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(251,249,246,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  header .wrap{ position: relative; }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding: 18px 0; gap: 24px; }
+  .logo{ display:flex; align-items:center; }
+  .logo img{ height: 34px; width:auto; }
+  .nav-links{ display:flex; gap: 26px; list-style:none; align-items:center; }
+  .nav-links a{ text-decoration:none; font-size:14.5px; color: var(--ink-soft); font-family: Calibri, sans-serif; white-space:nowrap; }
+  .nav-links a:hover{ color: var(--bordeaux); }
+  .nav-cta{ display:flex; align-items:center; gap:16px; }
+  .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; flex-direction:column; gap:5px; }
+  .nav-toggle span{ width:22px; height:2px; background: var(--bordeaux); display:block; }
+  .nav-links.aberto{ display:flex; }
+  .btn{
+    display:inline-block; padding: 13px 26px; border-radius: 4px;
+    background: var(--bordeaux); color:#fff; text-decoration:none;
+    font-weight:600; font-size:15px; border:none; cursor:pointer; font-family: Calibri, sans-serif;
+  }
+  .btn:hover{ background: var(--bordeaux-escuro); }
+  .btn-outline{ background:none; border:1.5px solid var(--bordeaux); color: var(--bordeaux); }
+  .btn-outline:hover{ background: var(--bordeaux); color:#fff; }
+
+  /* hero da página */
+  .hero-conteudo{ padding: 60px 0 40px; border-bottom: 1px solid var(--line); }
+  .hero-conteudo h1{ font-size: 40px; margin-bottom: 14px; letter-spacing: -0.01em; }
+
+  /* lista de artigos */
+  .lista-artigos{ display:flex; flex-direction:column; }
+  .artigo-item{
+    display:grid; grid-template-columns: 140px 1fr; gap: 28px;
+    padding: 34px 0; border-bottom: 1px solid var(--line);
+  }
+  .artigo-item .tag{ font-size:12.5px; color: var(--brass-text); font-weight:700; padding-top:4px; font-family: Calibri, sans-serif; }
+  .artigo-item h2{ font-size: 22px; margin-bottom: 8px; }
+  .artigo-item p{ color: var(--ink-soft); font-size: 15px; max-width: 640px; font-family: Calibri, sans-serif; }
+  .artigo-item .ler{ display:inline-block; margin-top:10px; font-size:13.5px; font-weight:600; color: var(--bordeaux); text-decoration:underline; text-underline-offset:3px; font-family: Calibri, sans-serif; }
+
+  /* cta final */
+  .cta-final{ background: var(--bordeaux); color:#fff; text-align:center; }
+  .cta-final h2{ color:#fff; margin-bottom: 14px; }
+  .cta-final p{ color:#E8D9DE; margin-bottom: 26px; font-family: Calibri, sans-serif; }
+  .cta-final .btn{ background: var(--brass); color: var(--bordeaux-escuro); }
+  .cta-final .btn:hover{ background:#CB9A50; }
+  .cta-final .logo-cta{ height: 28px; margin-bottom: 20px; }
+
+  footer{ padding: 40px 0; text-align:center; font-size: 13px; color: var(--ink-soft); border-top:1px solid var(--line); font-family: Calibri, sans-serif; }
+  footer img{ height: 22px; margin: 0 auto 14px; }
+
+  @media (max-width: 860px){
+    .nav-toggle{ display:flex; }
+    .nav-links{
+      display:none; position:absolute; top:100%; left:0; right:0;
+      background: var(--paper); border-bottom:1px solid var(--line);
+      flex-direction:column; align-items:flex-start; gap:0; padding: 8px 24px 18px;
+    }
+    .nav-links a{ padding: 12px 0; width:100%; border-bottom:1px solid var(--line); }
+    .nav-links.aberto{ display:flex; }
+    .artigo-item{ grid-template-columns: 1fr; gap:8px; }
+    .hero-conteudo h1{ font-size: 30px; }
+    section{ padding: 48px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav">
+    <a href="index.html" class="logo"><img src="assets/logo-bordeaux.png" alt="EXPLORE Desenvolvimento de Gente e Gestão"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#quem-somos">Quem somos</a></li>
+      <li><a href="index.html#o-que-fazemos">O que fazemos</a></li>
+      <li><a href="index.html#servicos">Serviços</a></li>
+      <li><a href="index.html#como-trabalhamos">Como trabalhamos</a></li>
+      <li><a href="index.html#casos">Casos</a></li>
+      <li><a href="index.html#diagnostico">Diagnóstico</a></li>
+      <li><a href="insights.html">Conteúdo</a></li>
+      <li><a href="index.html#faq">Dúvidas</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="index.html#contato" class="btn">Falar com a gente</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero-conteudo">
+  <div class="wrap">
+    <span class="kicker">Conteúdo</span>
+    <h1>Textos, publicações e ideias sobre gestão de PMEs</h1>
+    <p class="lead">Escritos para quem toca a empresa no dia a dia. Sem fórmula pronta, sem jargão que não serve pra nada na prática.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="lista-artigos">
+      <div class="artigo-item">
+        <div class="tag">Transição de complexidade</div>
+        <div>
+          <h2>O tamanho que quebra a empresa que deu certo</h2>
+          <p>Por que o mesmo jeito de gerir que fez sua empresa crescer até aqui pode ser exatamente o que está travando o próximo salto.</p>
+          <a href="artigos/transicao-complexidade.html" class="ler">Ler artigo completo</a>
+        </div>
+      </div>
+      <div class="artigo-item">
+        <div class="tag">Rotina</div>
+        <div>
+          <h2>Reunião não é rotina de gestão</h2>
+          <p>A diferença entre marcar reuniões e ter um ritual de gestão que o time segue sozinho, mesmo quando o dono não está olhando.</p>
+          <a href="artigos/rotina-de-gestao.html" class="ler">Ler artigo completo</a>
+        </div>
+      </div>
+      <div class="artigo-item">
+        <div class="tag">Jogo infinito</div>
+        <div>
+          <h2>Sua empresa está jogando para vencer ou para continuar jogando?</h2>
+          <p>Como a lógica do jogo infinito muda a forma de tomar decisão em uma PME em crescimento.</p>
+          <a href="artigos/jogo-infinito.html" class="ler">Ler artigo completo</a>
+        </div>
+      </div>
+      <div class="artigo-item">
+        <div class="tag">Métricas</div>
+        <div>
+          <h2>O número que sua empresa mede tarde demais</h2>
+          <p>Por que muita PME só descobre o problema no extrato bancário, e como um painel simples muda esse jogo.</p>
+          <a href="artigos/metricas-atraso.html" class="ler">Ler artigo completo</a>
+        </div>
+      </div>
+      <div class="artigo-item">
+        <div class="tag">Liderança</div>
+        <div>
+          <h2>O gestor que resolve tudo é o gargalo da própria equipe</h2>
+          <p>Como identificar quando a liderança virou um ponto único de falha, e o primeiro passo prático para mudar isso.</p>
+          <a href="artigos/lideranca-gargalo.html" class="ler">Ler artigo completo</a>
+        </div>
+      </div>
+      <div class="artigo-item">
+        <div class="tag">Processos</div>
+        <div>
+          <h2>Processo bom não trava a empresa, destrava</h2>
+          <p>Por que "burocracia" e "processo" não são sinônimos, e como saber se o seu processo está ajudando ou atrapalhando.</p>
+          <a href="artigos/processo-destrava.html" class="ler">Ler artigo completo</a>
+        </div>
+      </div>
+      <div class="artigo-item">
+        <div class="tag">Diagnóstico</div>
+        <div>
+          <h2>O que um diagnóstico organizacional realmente mede</h2>
+          <p>Por trás dos formulários e das entrevistas, o que esse tipo de diagnóstico está de fato tentando enxergar na sua empresa.</p>
+          <a href="artigos/o-que-diagnostico-mede.html" class="ler">Ler artigo completo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="wrap">
+    <img src="assets/logo-branca.png" alt="EXPLORE" class="logo-cta">
+    <span class="kicker" style="color:#E3B975">Vamos conversar</span>
+    <h2>Quer aplicar isso na sua empresa?</h2>
+    <p>Fale com a gente e entenda por onde começar.</p>
+    <a href="index.html#contato" class="btn">Falar com a gente</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-bordeaux.png" alt="EXPLORE">
+    EXPLORE Desenvolvimento de Gente e Gestão<br>Rio de Janeiro, RJ<br>© 2026. Todos os direitos reservados.
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var toggle = document.getElementById('navToggle');
+    var links = document.getElementById('navLinks');
+    if (!toggle || !links) return;
+    toggle.addEventListener('click', function(){
+      var aberto = links.classList.toggle('aberto');
+      toggle.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+    });
+  })();
+</script>
+
+</body>
+</html>
