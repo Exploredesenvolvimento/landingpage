@@ -34,7 +34,7 @@
     --paper-alt: #F3EEE8;
     --ink: #221A1E;
     --ink-soft: #5B4F55;
-    --line: #E4DCD3;
+    --line: #A68C6A;
   }
   *{ box-sizing: border-box; margin:0; padding:0; }
   html{ scroll-behavior: smooth; }
@@ -88,8 +88,10 @@
   .btn-outline:hover{ background: var(--bordeaux); color:#fff; }
 
   /* hero da página */
-  .hero-conteudo{ padding: 60px 0 40px; border-bottom: 1px solid var(--line); }
+  .hero-conteudo{ padding: 60px 0 0; }
   .hero-conteudo h1{ font-size: 40px; margin-bottom: 14px; letter-spacing: -0.01em; }
+  .conteudo-banner{ width:100%; overflow:hidden; margin-top:40px; border-bottom: 1px solid var(--line); }
+  .conteudo-banner img{ width:100%; height:100%; object-fit:cover; display:block; }
 
   /* lista de artigos */
   /* filtro por tema */
@@ -197,6 +199,13 @@
     <p class="lead">Escritos para quem toca a empresa no dia a dia. Sem fórmula pronta, sem jargão que não serve pra nada na prática.</p>
   </div>
 </section>
+
+<div class="conteudo-banner">
+  <picture>
+    <source srcset="assets/conteudo-banner.webp" type="image/webp">
+    <img src="assets/conteudo-banner.jpg" alt="Roda de conversa durante um encontro de desenvolvimento da EXPLORE" loading="lazy">
+  </picture>
+</div>
 
 <section>
   <div class="wrap">
