@@ -132,7 +132,7 @@
     --paper-alt: #F3EEE8;
     --ink: #221A1E;
     --ink-soft: #5B4F55;
-    --line: #E4DCD3;
+    --line: #A68C6A;
   }
   *{ box-sizing: border-box; margin:0; padding:0; }
   html{ scroll-behavior: smooth; }
@@ -212,18 +212,21 @@
 
   /* quem somos */
   /* clientes */
-  .clientes{ background: var(--paper-alt); }
+  .clientes{ background: var(--paper); }
   .clientes-grid{ display:grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--line); border:1px solid var(--line); margin-top: 40px; }
   .cliente-item{
-    background: var(--paper); padding: 20px; min-height:100px;
+    background: var(--paper); padding: 20px; min-height:100px; overflow:visible;
     display:flex; align-items:center; justify-content:center;
     transition: transform 0.18s ease, box-shadow 0.18s ease; position:relative; z-index:1;
   }
-  .cliente-item:hover{ transform: translateY(-2px); box-shadow: 0 6px 16px rgba(67,30,51,0.08); z-index:2; }
-  .cliente-item img{ max-width:100%; max-height:52px; width:auto; height:auto; object-fit:contain; }
-  .cliente-item.texto{ font-family: Georgia, serif; font-size:14.5px; color: var(--bordeaux-escuro); text-align:center; font-weight:700; line-height:1.3; }
+  .cliente-item:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px rgba(67,30,51,0.16); z-index:5; }
+  .cliente-item img{ max-width:100%; max-height:52px; width:auto; height:auto; object-fit:contain; transition: transform 0.22s ease; }
+  .cliente-item:hover img{ transform: scale(1.35); }
+  .cliente-item.texto{ font-family: Georgia, serif; font-size:14.5px; color: var(--bordeaux-escuro); text-align:center; font-weight:700; line-height:1.3; transition: transform 0.22s ease; }
+  .cliente-item.texto:hover{ transform: scale(1.1); }
 
   /* socios */
+  .socios{ background: var(--paper-alt); }
   .socios-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 44px; }
   .socio-card{ display:flex; flex-direction:column; align-items:flex-start; }
   .socio-foto{ width:132px; height:132px; border-radius:50%; object-fit:cover; margin-bottom: 22px; }
@@ -232,6 +235,7 @@
   .socio-card p.bio{ font-size:14.5px; color: var(--ink-soft); }
 
   /* bastidores */
+  .bastidores{ background: var(--paper-alt); }
   .bastidores-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
   .bastidor-item{ position:relative; border-radius:4px; overflow:hidden; aspect-ratio: 4/3; }
   .bastidor-item img{ width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.3s ease; }
@@ -243,40 +247,52 @@
   }
 
   /* dor */
-  .dor-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border:1px solid var(--line); margin-top: 40px; }
-  .dor-card{ background: var(--paper); padding: 30px; border-top: 2px solid var(--brass); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .dor{ background: var(--bordeaux); }
+  .dor .kicker{ color: #E3B975; }
+  .dor .kicker::before{ background: #E3B975; }
+  .dor h2{ color:#fff; }
+  .dor .lead{ color:#E8D9DE; }
+  .dor-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.15); margin-top: 40px; }
+  .dor-card{ background: var(--paper); padding: 30px; border-top: 3px solid var(--brass); box-shadow: 0 3px 10px rgba(0,0,0,0.12); transition: transform 0.18s ease, box-shadow 0.18s ease; }
   .dor-card svg{ width:26px; height:26px; margin-bottom:16px; }
-  .dor-card:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(67,30,51,0.08); }
+  .dor-card:hover{ transform: translateY(-4px); box-shadow: 0 10px 26px rgba(0,0,0,0.25); }
   .dor-card h3{ font-size:17px; color: var(--bordeaux-escuro); margin-bottom:10px; }
   .dor-card p{ font-size:14px; color: var(--ink-soft); }
   .dor-cta{ margin-top: 30px; }
-  .dor-cta a{ font-size:14.5px; font-weight:600; color: var(--bordeaux); text-decoration:underline; text-underline-offset:3px; }
+  .dor-cta a{ font-size:14.5px; font-weight:600; color:#fff; text-decoration:underline; text-underline-offset:3px; }
 
   /* servicos */
   .servicos{ background: var(--paper-alt); }
   .oriente-box{
-    background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--bordeaux);
-    padding: 40px; margin-top: 40px;
+    background: var(--bordeaux); border-radius: 2px;
+    padding: 44px; margin-top: 40px;
   }
-  .oriente-eyebrow{ font-size:12px; color: var(--brass-text); font-weight:700; margin-bottom:10px; }
-  .oriente-box h3{ font-family: Georgia, "Times New Roman", serif; font-size: 24px; color: var(--bordeaux-escuro); margin-bottom: 14px; }
-  .oriente-box > p{ color: var(--ink-soft); font-size:15px; max-width: 640px; margin-bottom: 30px; }
+  .oriente-eyebrow{ font-size:12px; color: #E3B975; font-weight:700; margin-bottom:10px; }
+  .oriente-box h3{ font-family: Georgia, "Times New Roman", serif; font-size: 26px; color:#fff; margin-bottom: 14px; }
+  .oriente-box > p{ color:#E8D9DE; font-size:15px; max-width: 640px; margin-bottom: 34px; }
   .oriente-passos{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 30px; position:relative; margin-top: 6px; }
   .oriente-passos::before{
     content:""; position:absolute; top:23px; left: calc(16.66% + 4px); right: calc(16.66% + 4px);
-    height:2px; background: var(--line); z-index:0;
+    height:2px; background: rgba(255,255,255,0.25); z-index:0;
   }
   .oriente-passo{ position:relative; z-index:1; }
   .oriente-passo .n{
-    width:46px; height:46px; border-radius:50%; background: var(--paper); border:2px solid var(--bordeaux);
-    color: var(--bordeaux); font-family: Georgia, serif; font-size: 19px; font-weight:700;
+    width:46px; height:46px; border-radius:50%; background: var(--bordeaux); border:2px solid #E3B975;
+    color: #E3B975; font-family: Georgia, serif; font-size: 19px; font-weight:700;
     display:flex; align-items:center; justify-content:center; margin-bottom: 14px;
   }
-  .oriente-passo h4{ font-size:16px; color: var(--bordeaux-escuro); margin-bottom:8px; }
-  .oriente-passo p{ font-size:14px; color: var(--ink-soft); }
+  .oriente-passo h4{ font-size:16px; color:#fff; margin-bottom:8px; }
+  .oriente-passo p{ font-size:14px; color:#E8D9DE; }
   .outros-servicos-titulo{ margin-top: 50px; margin-bottom: 8px; font-size:13px; color: var(--ink-soft); font-weight:600; }
   .outros-servicos-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border:1px solid var(--line); }
-  .os-card{ background: var(--paper); padding: 30px; border-top: 2px solid var(--bordeaux); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .os-card{ background: var(--paper); padding: 30px; border-top: 2px solid var(--bordeaux); box-shadow: 0 3px 10px rgba(67,30,51,0.08); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .os-card ul{ margin-top: 14px; padding:0; list-style:none; }
+  .os-card li{ font-size:13.5px; color: var(--ink-soft); padding: 6px 0 6px 16px; border-top:1px solid var(--line); position:relative; }
+  .os-card li:first-child{ border-top:none; }
+  .os-card li::before{ content:"—"; position:absolute; left:0; color: var(--brass-text); }
+  .oriente-entregaveis{ margin-top: 30px; padding-top: 22px; border-top:1px solid rgba(255,255,255,0.2); font-size:13.5px; color:#E8D9DE; }
+  .oriente-entregaveis strong{ color:#fff; }
+  .oriente-pilares{ font-size:13px; color:#E3B975; margin-top:6px; }
   .os-card:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(67,30,51,0.08); }
   .os-card h4{ font-size:16px; color: var(--bordeaux-escuro); margin-bottom:10px; }
   .os-card p{ font-size:14px; color: var(--ink-soft); }
@@ -294,14 +310,14 @@
 
   /* o que fazemos */
   .servicos-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border:1px solid var(--line); margin-top: 40px; }
-  .servico{ background: var(--paper); padding: 34px; border-top: 2px solid var(--bordeaux); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .servico{ background: var(--paper); padding: 34px; border-top: 2px solid var(--bordeaux); box-shadow: 0 3px 10px rgba(67,30,51,0.08); transition: transform 0.18s ease, box-shadow 0.18s ease; }
   .servico:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(67,30,51,0.08); }
   .servico .pilar-tag{ display:inline-block; font-size:11.5px; color: var(--bordeaux-escuro); font-weight:700; letter-spacing:0.02em; background: rgba(97,43,74,0.07); padding:4px 10px; border-radius:3px; margin-bottom:12px; }
   .servico h3{ font-size:19px; color: var(--bordeaux-escuro); margin-bottom:10px; }
   .servico p{ font-size:14.5px; color: var(--ink-soft); }
 
   /* como trabalhamos */
-  .como-trabalhamos{ background: var(--paper-alt); }
+  .como-trabalhamos{ background: var(--paper); }
   .passos{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px; }
   .passo{ text-align:left; }
   .passo .n{ font-size: 30px; font-weight:700; color: var(--brass-text); margin-bottom: 8px; }
@@ -309,6 +325,7 @@
   .passo p{ font-size:14px; color: var(--ink-soft); }
 
   /* metodologias */
+  .metodologias{ background: var(--paper-alt); }
   .metodologias .wrap{ max-width: 720px; }
   .metod-lista{ display:flex; flex-wrap:wrap; gap: 14px; justify-content:center; }
   .metodologias-titulo{ text-align:center; margin-bottom: 30px; }
@@ -327,9 +344,9 @@
   .metod-descricao strong{ color: var(--bordeaux-escuro); }
 
   /* casos */
-  .casos{ background: var(--paper-alt); }
+  .casos{ background: var(--paper); }
   .casos-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border:1px solid var(--line); margin-top: 40px; }
-  .caso{ background: var(--paper); padding: 34px 26px; transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .caso{ background: var(--paper); padding: 34px 26px; box-shadow: 0 3px 10px rgba(67,30,51,0.08); transition: transform 0.18s ease, box-shadow 0.18s ease; }
   .caso:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(67,30,51,0.08); }
   .caso .segmento{ display:inline-block; font-size:11.5px; color: var(--bordeaux-escuro); font-weight:700; letter-spacing:0.02em; background: rgba(97,43,74,0.07); padding:4px 10px; border-radius:3px; margin-bottom: 14px; }
   .caso h3{ font-size:17px; color: var(--bordeaux-escuro); margin-bottom: 10px; }
@@ -338,10 +355,14 @@
   .casos-nota{ font-size: 13px; color: var(--ink-soft); text-align:center; margin-top: 24px; }
 
   /* diagnostico */
-  .diagnostico{ }
+  .diagnostico{ background: var(--bordeaux); }
+  .diagnostico .kicker{ color: #E3B975; }
+  .diagnostico .kicker::before{ background: #E3B975; }
+  .diagnostico h2{ color:#fff; }
+  .diagnostico .lead{ color:#E8D9DE; }
   .diag-box{
-    max-width: 680px; margin: 40px auto 0; background: var(--paper-alt);
-    border: 1px solid var(--line); border-radius: 8px; padding: 40px;
+    max-width: 680px; margin: 40px auto 0; background: #fff;
+    border: none; border-radius: 8px; padding: 40px; box-shadow: 0 16px 40px rgba(0,0,0,0.2);
   }
   .diag-progresso{ display:flex; gap:6px; margin-bottom: 26px; }
   .diag-progresso .barra{ flex:1; height:4px; background: var(--line); border-radius:2px; overflow:hidden; }
@@ -361,7 +382,7 @@
   .diag-resultado .indice{ font-size: 44px; font-weight:700; color: var(--bordeaux); margin: 6px 0; }
   .diag-resultado p{ color: var(--ink-soft); margin-bottom: 22px; font-size: 14.5px; }
   noscript .diag-box{ display:none; }
-  noscript .diag-fallback{ text-align:center; margin-top:30px; }
+  noscript .diag-fallback{ text-align:center; margin-top:30px; color:#E8D9DE; }
 
   /* faq */
   .faq{ background: var(--paper-alt); }
@@ -380,7 +401,7 @@
 
   /* conteúdo */
   .conteudo-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border:1px solid var(--line); margin-top: 40px; }
-  .artigo-card{ background: var(--paper); padding: 30px; display:flex; flex-direction:column; height:100%; transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .artigo-card{ background: var(--paper); padding: 30px; display:flex; flex-direction:column; height:100%; box-shadow: 0 3px 10px rgba(67,30,51,0.08); transition: transform 0.18s ease, box-shadow 0.18s ease; }
   .artigo-card:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(67,30,51,0.08); }
   .artigo-card .tag{ display:inline-block; font-size:11.5px; color: var(--bordeaux-escuro); font-weight:700; letter-spacing:0.02em; background: rgba(97,43,74,0.07); padding:4px 10px; border-radius:3px; margin-bottom:12px; }
   .artigo-card h3{ font-size:18px; color: var(--bordeaux-escuro); margin-bottom:10px; font-family: Georgia, serif; }
@@ -389,6 +410,7 @@
   .conteudo-cta{ text-align:center; margin-top: 30px; }
 
   /* segmentos */
+  .segmentos{ background: var(--paper-alt); }
   .segmentos .wrap{ text-align:center; }
   .segmentos-lista{ display:flex; flex-wrap:wrap; justify-content:center; gap: 12px 28px; margin-top: 24px; }
   .segmentos-lista span{ font-size: 14px; color: var(--ink-soft); }
@@ -407,7 +429,7 @@
   .consent input{ margin-top: 3px; }
   .contato .btn{ background: var(--brass); color: #2E1524; }
   .contato .btn:hover{ background:#CB9A50; }
-  .contato-logo{ height: 30px; margin-bottom: 22px; }
+  .contato-logo{ height: 30px; width:auto; margin-bottom: 22px; }
   .contato-info h3{ color:#fff; font-size:18px; margin-bottom:14px; }
   .contato-info p{ color:#E8D9DE; font-size:14.5px; margin-bottom: 10px; }
 
@@ -419,7 +441,7 @@
 
   /* footer */
   footer{ padding: 40px 0; text-align:center; font-size: 13px; color: var(--ink-soft); border-top:1px solid var(--line); }
-  footer img{ height: 22px; margin: 0 auto 14px; }
+  footer img{ height: 22px; width:auto; margin: 0 auto 14px; }
 
   /* whatsapp flutuante */
   .wa-float{
@@ -674,18 +696,21 @@
         <div class="oriente-passo">
           <div class="n">1</div>
           <h4>Diagnóstico</h4>
-          <p>Mapeamos rotina, processos, métricas e pessoas para identificar exatamente onde a empresa trava.</p>
+          <p>Formulário estruturado com sócios e equipe-chave, seguido de entrevistas presenciais. Mapeamos cinco pilares: estratégia, pessoas, operações, financeiro e governança.</p>
         </div>
         <div class="oriente-passo">
           <div class="n">2</div>
           <h4>Mapa de Orientação</h4>
-          <p>Transformamos o diagnóstico em um plano de ação priorizado, com responsável e prazo definidos para cada frente.</p>
+          <p>O diagnóstico vira plano de ação priorizado em ciclos de 30, 60 e 90 dias: primeiro o mapa de decisão (quem decide o quê), depois estrutura formal, por último cultura documentada.</p>
         </div>
         <div class="oriente-passo">
           <div class="n">3</div>
           <h4>Trilha de Desenvolvimento</h4>
-          <p>Acompanhamos a execução com rituais, treinamentos e revisões periódicas, até o plano virar rotina do time.</p>
+          <p>Rituais de gestão semanais, supervisão de processos e indicadores de performance acompanhados de perto, até o plano virar rotina do time, não depender mais da consultoria.</p>
         </div>
+      </div>
+      <div class="oriente-entregaveis">
+        <strong>O que fica com a empresa:</strong> diagnóstico documentado dos 5 pilares, mapa de riscos organizacionais, mapa de decisão por função, estrutura organizacional formal, dashboard de indicadores e manual de cultura. Tudo documentado, tudo pertence à empresa, não à consultoria.
       </div>
     </div>
 
@@ -694,14 +719,32 @@
       <div class="os-card">
         <h4>Recrutamento e seleção</h4>
         <p>Estruturamos o processo seletivo do perfil da vaga ao onboarding, para contratar com critério e reduzir turnover.</p>
+        <ul>
+          <li>Mapeamento do perfil técnico e comportamental da vaga</li>
+          <li>Triagem e entrevistas estruturadas</li>
+          <li>Avaliação comportamental do candidato final</li>
+          <li>Onboarding acompanhado nos primeiros 90 dias</li>
+        </ul>
       </div>
       <div class="os-card">
         <h4>Treinamentos e desenvolvimento de lideranças</h4>
-        <p>Programas práticos de liderança, comunicação e gestão de pessoas, em formato presencial ou híbrido.</p>
+        <p>Programas vivenciais de liderança, comunicação e gestão de pessoas, com base em avaliação comportamental real da equipe, não em teoria genérica.</p>
+        <ul>
+          <li>Avaliação comportamental de cada participante</li>
+          <li>Devolutiva coletiva de perfis da equipe</li>
+          <li>Dinâmicas práticas com debriefing conectado ao trabalho</li>
+          <li>Formato presencial ou híbrido, sob medida pro porte do time</li>
+        </ul>
       </div>
       <div class="os-card">
         <h4>Gestão de riscos psicossociais</h4>
         <p>Estruturamos o mapeamento e o PGR de riscos psicossociais exigidos pela NR-1, com fiscalização já em vigor desde maio de 2026.</p>
+        <ul>
+          <li>Mapeamento de riscos por função e setor</li>
+          <li>PGR (Programa de Gerenciamento de Riscos) documentado</li>
+          <li>Plano de ação com prazos e responsáveis</li>
+          <li>Capacitação de lideranças para identificar sinais de risco</li>
+        </ul>
         <div class="selo">NR-1</div>
       </div>
     </div>
@@ -1079,7 +1122,7 @@
         }
       });
     }, { threshold: 0.1 });
-    alvos.forEach(function(el){{ obs.observe(el); });
+    alvos.forEach(function(el){ obs.observe(el); });
   })();
 
   // Botão voltar ao topo
