@@ -137,7 +137,9 @@
     display:grid; grid-template-columns: 140px 1fr; gap: 28px;
     padding: 34px 0; border-bottom: 1px solid var(--line);
   }
-  .artigo-item .tag{ display:inline-block; font-size:11.5px; color: var(--bordeaux-escuro); font-weight:700; letter-spacing:0.02em; background: rgba(97,43,74,0.07); padding:4px 10px; border-radius:3px; font-family: Calibri, sans-serif; }
+  .artigo-thumb{ width:140px; height:140px; border-radius:4px; overflow:hidden; background: linear-gradient(135deg, var(--bordeaux) 0%, var(--brass) 100%); flex-shrink:0; }
+  .artigo-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .artigo-item .tag{ display:inline-block; font-size:11.5px; color: var(--bordeaux-escuro); font-weight:700; letter-spacing:0.02em; background: rgba(97,43,74,0.07); padding:4px 10px; border-radius:3px; font-family: Calibri, sans-serif; margin-bottom:10px; }
   .artigo-item h2{ font-size: 22px; margin-bottom: 8px; }
   .artigo-item p{ color: var(--ink-soft); font-size: 15px; max-width: 640px; font-family: Calibri, sans-serif; }
   .artigo-item .ler{ display:inline-block; margin-top:10px; font-size:13.5px; font-weight:600; color: var(--bordeaux); text-decoration:underline; text-underline-offset:3px; font-family: Calibri, sans-serif; }
@@ -163,6 +165,7 @@
     .nav-links a{ padding: 12px 0; width:100%; border-bottom:1px solid var(--line); }
     .nav-links.aberto{ display:flex; }
     .artigo-item{ grid-template-columns: 1fr; gap:8px; }
+    .artigo-thumb{ width:100%; height:180px; margin-bottom:6px; }
     .hero-conteudo h1{ font-size: 30px; }
     section{ padding: 48px 0; }
   }
@@ -222,59 +225,80 @@
     </div>
     <div class="lista-artigos" id="listaArtigos">
       <div class="artigo-item" data-tema="transicao">
+        <div class="artigo-thumb"><img src="https://images.pexels.com/photos/38372675/pexels-photo-38372675.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=280&amp;h=280&amp;fit=crop" alt="Escadaria arquitetônica com arcos em tons terracota" loading="lazy" width="280" height="280" onerror="this.style.display='none'"></div>
+        <div>
         <div class="tag">Transição de complexidade</div>
         <div>
           <h2>O tamanho que quebra a empresa que deu certo</h2>
           <p>Por que o mesmo jeito de gerir que fez sua empresa crescer até aqui pode ser exatamente o que está travando o próximo salto.</p>
           <a href="artigos/transicao-complexidade.html" class="ler">Ler artigo completo</a>
         </div>
+        </div>
       </div>
       <div class="artigo-item" data-tema="rotina">
+        <div class="artigo-thumb"><img src="https://images.pexels.com/photos/12911169/pexels-photo-12911169.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=280&amp;h=280&amp;fit=crop" alt="Planejador organizado sobre uma mesa de trabalho" loading="lazy" width="280" height="280" onerror="this.style.display='none'"></div>
+        <div>
         <div class="tag">Rotina</div>
         <div>
           <h2>Reunião não é rotina de gestão</h2>
           <p>A diferença entre marcar reuniões e ter um ritual de gestão que o time segue sozinho, mesmo quando o dono não está olhando.</p>
           <a href="artigos/rotina-de-gestao.html" class="ler">Ler artigo completo</a>
         </div>
+        </div>
       </div>
       <div class="artigo-item" data-tema="jogo-infinito">
+        <div class="artigo-thumb"><img src="https://images.pexels.com/photos/57640/pexels-photo-57640.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=280&amp;h=280&amp;fit=crop" alt="Estrada sinuosa ao pôr do sol" loading="lazy" width="280" height="280" onerror="this.style.display='none'"></div>
+        <div>
         <div class="tag">Jogo infinito</div>
         <div>
           <h2>Sua empresa está jogando para vencer ou para continuar jogando?</h2>
           <p>Como a lógica do jogo infinito muda a forma de tomar decisão em uma PME em crescimento.</p>
           <a href="artigos/jogo-infinito.html" class="ler">Ler artigo completo</a>
         </div>
+        </div>
       </div>
       <div class="artigo-item" data-tema="metricas">
+        <div class="artigo-thumb"><img src="https://images.pexels.com/photos/280326/pexels-photo-280326.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=280&amp;h=280&amp;fit=crop" alt="Relógio analógico numa parede" loading="lazy" width="280" height="280" onerror="this.style.display='none'"></div>
+        <div>
         <div class="tag">Métricas</div>
         <div>
           <h2>O número que sua empresa mede tarde demais</h2>
           <p>Por que muita PME só descobre o problema no extrato bancário, e como um painel simples muda esse jogo.</p>
           <a href="artigos/metricas-atraso.html" class="ler">Ler artigo completo</a>
         </div>
+        </div>
       </div>
       <div class="artigo-item" data-tema="lideranca">
+        <div class="artigo-thumb"><img src="https://images.pexels.com/photos/4405944/pexels-photo-4405944.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=280&amp;h=280&amp;fit=crop" alt="Corredor estreito com arco em prédio antigo" loading="lazy" width="280" height="280" onerror="this.style.display='none'"></div>
+        <div>
         <div class="tag">Liderança</div>
         <div>
           <h2>O gestor que resolve tudo é o gargalo da própria equipe</h2>
           <p>Como identificar quando a liderança virou um ponto único de falha, e o primeiro passo prático para mudar isso.</p>
           <a href="artigos/lideranca-gargalo.html" class="ler">Ler artigo completo</a>
         </div>
+        </div>
       </div>
       <div class="artigo-item" data-tema="processos">
+        <div class="artigo-thumb"><img src="https://images.pexels.com/photos/18968224/pexels-photo-18968224.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=280&amp;h=280&amp;fit=crop" alt="Porta aberta revelando uma escada iluminada" loading="lazy" width="280" height="280" onerror="this.style.display='none'"></div>
+        <div>
         <div class="tag">Processos</div>
         <div>
           <h2>Processo bom não trava a empresa, destrava</h2>
           <p>Por que "burocracia" e "processo" não são sinônimos, e como saber se o seu processo está ajudando ou atrapalhando.</p>
           <a href="artigos/processo-destrava.html" class="ler">Ler artigo completo</a>
         </div>
+        </div>
       </div>
       <div class="artigo-item" data-tema="diagnostico">
+        <div class="artigo-thumb"><img src="https://images.pexels.com/photos/4494642/pexels-photo-4494642.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=280&amp;h=280&amp;fit=crop" alt="Lupa sobre as páginas de um livro" loading="lazy" width="280" height="280" onerror="this.style.display='none'"></div>
+        <div>
         <div class="tag">Diagnóstico</div>
         <div>
           <h2>O que um diagnóstico organizacional realmente mede</h2>
           <p>Por trás dos formulários e das entrevistas, o que esse tipo de diagnóstico está de fato tentando enxergar na sua empresa.</p>
           <a href="artigos/o-que-diagnostico-mede.html" class="ler">Ler artigo completo</a>
+        </div>
         </div>
       </div>
     </div>

@@ -324,8 +324,10 @@
   .os-saiba-mais[open] summary::after{ content:"–"; }
   .os-saiba-mais p{ margin-top: 12px; font-size:13.5px; color: var(--ink-soft); }
   .os-saiba-mais p + p{ margin-top: 10px; }
+  .os-link{ display:inline-block; margin-top: 16px; font-size:13.5px; font-weight:600; color: var(--bordeaux); text-decoration:underline; text-underline-offset:3px; }
   .oriente-entregaveis{ margin-top: 30px; padding-top: 22px; border-top:1px solid rgba(255,255,255,0.2); font-size:13.5px; color:#E8D9DE; }
   .oriente-entregaveis strong{ color:#fff; }
+  .oriente-link{ display:inline-block; margin-top: 20px; font-size:14px; font-weight:600; color:#E3B975; text-decoration:underline; text-underline-offset:3px; }
   .oriente-pilares{ font-size:13px; color:#E3B975; margin-top:6px; }
   .os-card:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(67,30,51,0.08); }
   .os-card h4{ font-size:16px; color: var(--bordeaux-escuro); margin-bottom:10px; }
@@ -422,8 +424,11 @@
 
   /* conteúdo */
   .conteudo-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border:1px solid var(--line); margin-top: 40px; }
-  .artigo-card{ background: var(--paper); padding: 30px; display:flex; flex-direction:column; height:100%; box-shadow: 0 3px 10px rgba(67,30,51,0.08); transition: transform 0.18s ease, box-shadow 0.18s ease; }
+  .artigo-card{ background: var(--paper); display:flex; flex-direction:column; height:100%; box-shadow: 0 3px 10px rgba(67,30,51,0.08); transition: transform 0.18s ease, box-shadow 0.18s ease; overflow:hidden; }
   .artigo-card:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(67,30,51,0.08); }
+  .artigo-card-foto{ width:100%; aspect-ratio: 1.7; background: linear-gradient(135deg, var(--bordeaux) 0%, var(--brass) 100%); }
+  .artigo-card-foto img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .artigo-card-corpo{ padding: 26px 30px 30px; display:flex; flex-direction:column; flex:1; }
   .artigo-card .tag{ display:inline-block; font-size:11.5px; color: var(--bordeaux-escuro); font-weight:700; letter-spacing:0.02em; background: rgba(97,43,74,0.07); padding:4px 10px; border-radius:3px; margin-bottom:12px; }
   .artigo-card h3{ font-size:18px; color: var(--bordeaux-escuro); margin-bottom:10px; font-family: Georgia, serif; }
   .artigo-card p{ font-size:14px; color: var(--ink-soft); flex:1; margin-bottom: 16px; }
@@ -712,6 +717,7 @@
       <div class="oriente-entregaveis">
         <strong>O que fica com a empresa:</strong> diagnóstico documentado dos 5 pilares, mapa de riscos organizacionais, mapa de decisão por função, estrutura organizacional formal, dashboard de indicadores e manual de cultura. Tudo documentado, e cada entregável é propriedade da empresa.
       </div>
+      <a href="servicos/jornada-oriente.html" class="oriente-link">Ver página completa da Jornada Oriente</a>
     </div>
 
     <div class="outros-servicos-titulo">Outras frentes</div>
@@ -730,6 +736,7 @@
           <p>Contratar errado custa caro: tempo de onboarding perdido, reposição, impacto no time que já está sobrecarregado. Por isso o processo começa antes da vaga aberta, mapeando com o gestor o que a função exige na prática: técnico e comportamental, além do que aparece no currículo.</p>
           <p>Cada etapa é estruturada com roteiro de entrevista padronizado, pra não depender do faro de quem entrevista naquele dia. O candidato final passa por avaliação comportamental antes da proposta, e o acompanhamento segue até os primeiros 90 dias, pra garantir que a contratação performa na prática.</p>
         </details>
+        <a href="servicos/recrutamento-selecao.html" class="os-link">Ver página completa</a>
       </div>
       <div class="os-card">
         <h4>Treinamentos e desenvolvimento de lideranças</h4>
@@ -745,6 +752,7 @@
           <p>A maior parte dos treinamentos de liderança do mercado é genérica: a mesma apresentação serve pra qualquer empresa. O nosso parte de um diagnóstico comportamental real da equipe antes de montar qualquer conteúdo, usando instrumentos de avaliação comportamental aplicados em formato coletivo, pra entender os perfis do time antes de desenhar qualquer dinâmica.</p>
           <p>A partir disso, desenhamos dinâmicas vivenciais com debriefing conectado ao trabalho real e devolutiva coletiva de perfis. Cada participante sai sabendo seu próprio padrão de comportamento sob pressão, decisão e conflito, e a liderança sai com um mapa concreto da equipe.</p>
         </details>
+        <a href="servicos/treinamentos-liderancas.html" class="os-link">Ver página completa</a>
       </div>
       <div class="os-card">
         <h4>Gestão de riscos psicossociais</h4>
@@ -760,6 +768,7 @@
           <p>Desde maio de 2026, a Portaria MTE 1.419/2025 exige que toda empresa com empregados registrados pela CLT, independente do porte, inclua riscos psicossociais no GRO (Gerenciamento de Riscos Ocupacionais). Sobrecarga, assédio moral, conflitos crônicos e jornadas exaustivas deixaram de ser um problema "de RH" e passaram a ser item de fiscalização, documentado no PGR, com plano de ação, prazos e responsáveis definidos.</p>
           <p>Conduzimos esse mapeamento com a mesma lógica dos 5 pilares que usamos no diagnóstico da Jornada Oriente, aplicada ao pilar de pessoas: entrevistas, observação de campo e os mesmos instrumentos comportamentais que já usamos em treinamento. O resultado não é só um documento pronto pra auditoria, é um retrato real de onde a operação está sob pressão, antes que vire afastamento ou passivo trabalhista.</p>
         </details>
+        <a href="servicos/gestao-riscos-psicossociais.html" class="os-link">Ver página completa</a>
         <div class="selo">NR-1</div>
       </div>
     </div>
@@ -1083,22 +1092,31 @@
     <p class="lead">Reflexões práticas sobre rotina, processos, métricas e liderança, escritas para quem toca a empresa no dia a dia.</p>
     <div class="conteudo-grid">
       <div class="artigo-card">
-        <div class="tag">Transição de complexidade</div>
-        <h3>O tamanho que quebra a empresa que deu certo</h3>
-        <p>Por que o mesmo jeito de gerir que fez sua empresa crescer até aqui pode ser exatamente o que está travando o próximo salto.</p>
-        <a href="artigos/transicao-complexidade.html" class="ler">Ler artigo</a>
+        <div class="artigo-card-foto"><img src="https://images.pexels.com/photos/38372675/pexels-photo-38372675.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500&amp;h=294&amp;fit=crop" alt="Escadaria arquitetônica com arcos em tons terracota" loading="lazy" width="500" height="294" onerror="this.style.display='none'"></div>
+        <div class="artigo-card-corpo">
+          <div class="tag">Transição de complexidade</div>
+          <h3>O tamanho que quebra a empresa que deu certo</h3>
+          <p>Por que o mesmo jeito de gerir que fez sua empresa crescer até aqui pode ser exatamente o que está travando o próximo salto.</p>
+          <a href="artigos/transicao-complexidade.html" class="ler">Ler artigo</a>
+        </div>
       </div>
       <div class="artigo-card">
-        <div class="tag">Rotina</div>
-        <h3>Reunião não é rotina de gestão</h3>
-        <p>A diferença entre marcar reuniões e ter um ritual de gestão que o time segue sozinho, mesmo quando o dono não está olhando.</p>
-        <a href="artigos/rotina-de-gestao.html" class="ler">Ler artigo</a>
+        <div class="artigo-card-foto"><img src="https://images.pexels.com/photos/12911169/pexels-photo-12911169.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500&amp;h=294&amp;fit=crop" alt="Planejador organizado sobre uma mesa de trabalho" loading="lazy" width="500" height="294" onerror="this.style.display='none'"></div>
+        <div class="artigo-card-corpo">
+          <div class="tag">Rotina</div>
+          <h3>Reunião não é rotina de gestão</h3>
+          <p>A diferença entre marcar reuniões e ter um ritual de gestão que o time segue sozinho, mesmo quando o dono não está olhando.</p>
+          <a href="artigos/rotina-de-gestao.html" class="ler">Ler artigo</a>
+        </div>
       </div>
       <div class="artigo-card">
-        <div class="tag">Jogo infinito</div>
-        <h3>Sua empresa está jogando para vencer ou para continuar jogando?</h3>
-        <p>Como a lógica do jogo infinito de Simon Sinek muda a forma de tomar decisão em uma PME em crescimento.</p>
-        <a href="artigos/jogo-infinito.html" class="ler">Ler artigo</a>
+        <div class="artigo-card-foto"><img src="https://images.pexels.com/photos/57640/pexels-photo-57640.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500&amp;h=294&amp;fit=crop" alt="Estrada sinuosa ao pôr do sol" loading="lazy" width="500" height="294" onerror="this.style.display='none'"></div>
+        <div class="artigo-card-corpo">
+          <div class="tag">Jogo infinito</div>
+          <h3>Sua empresa está jogando para vencer ou para continuar jogando?</h3>
+          <p>Como a lógica do jogo infinito de Simon Sinek muda a forma de tomar decisão em uma PME em crescimento.</p>
+          <a href="artigos/jogo-infinito.html" class="ler">Ler artigo</a>
+        </div>
       </div>
     </div>
     <div class="conteudo-cta">
