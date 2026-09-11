@@ -154,10 +154,33 @@
   .cta-final .btn:hover{ background:#CB9A50; }
   .cta-final .logo-cta{ height: 28px; margin: 0 auto 20px; }
 
-  footer{ padding: 40px 0; text-align:center; font-size: 13px; color: var(--ink-soft); border-top:1px solid var(--line); font-family: Calibri, sans-serif; }
-  footer img{ height: 22px; margin: 0 auto 14px; }
+  footer{ background: var(--bordeaux-escuro); color:#E8D9DE; padding: 60px 0 30px; font-size: 14px; }
+  .footer-grid{ display:grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; text-align:left; padding-bottom: 40px; }
+  .footer-col img{ height: 26px; width:auto; margin-bottom: 16px; filter: brightness(0) invert(1); }
+  .footer-col p{ font-size: 13.5px; line-height:1.6; color:#C9B2BE; }
+  .footer-col h4{ font-family: Calibri, sans-serif; font-size: 13px; color:#fff; font-weight:700; letter-spacing:0.03em; margin-bottom: 16px; }
+  .footer-col ul{ list-style:none; }
+  .footer-col li{ margin-bottom: 10px; }
+  .footer-col a{ color:#C9B2BE; text-decoration:none; font-size:13.5px; }
+  .footer-col a:hover{ color:#fff; text-decoration:underline; }
+  .footer-social{ display:flex; gap:12px; margin-top:18px; }
+  .footer-social a{
+    width:34px; height:34px; border-radius:50%; border:1px solid rgba(255,255,255,0.25);
+    display:flex; align-items:center; justify-content:center; transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .footer-social a:hover{ border-color:#fff; background: rgba(255,255,255,0.08); }
+  .footer-social svg{ width:16px; height:16px; }
+  .footer-base{
+    border-top:1px solid rgba(255,255,255,0.15); padding-top: 22px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;
+    font-size:12.5px; color:#B79CAA;
+  }
+  .footer-base a{ color:#B79CAA; text-decoration:underline; text-underline-offset:2px; }
+  .footer-base a:hover{ color:#fff; }
 
   @media (max-width: 860px){
+    .footer-grid{ grid-template-columns: 1fr 1fr; }
+    .footer-base{ flex-direction:column; align-items:flex-start; text-align:left; }
     .nav-toggle{ display:flex; }
     .nav-links{ display:none; position:absolute; top:100%; left:0; right:0; background: var(--paper); border-bottom:1px solid var(--line); flex-direction:column; align-items:flex-start; gap:0; padding: 8px 24px 18px; }
     .nav-links a{ padding: 12px 0; width:100%; border-bottom:1px solid var(--line); margin-right:0; }
@@ -200,7 +223,7 @@
     <p class="tempo-leitura">2 min de leitura</p>
     <h1>O tamanho que quebra a empresa que deu certo</h1>
     <div class="artigo-banner">
-      <img src="https://images.pexels.com/photos/38372675/pexels-photo-38372675.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=545&amp;fit=crop" alt="Escadaria arquitetônica com arcos em tons terracota" loading="lazy" width="1200" height="545" onerror="this.style.display='none'">
+      <img src="https://images.pexels.com/photos/23228215/pexels-photo-23228215.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200&amp;h=545&amp;fit=crop" alt="Broto de planta rompendo uma superfície de concreto" loading="lazy" width="1200" height="545" onerror="this.style.display='none'">
     </div>
     <p class="primeiro">Toda empresa que cresce chega numa fase estranha. O jeito de fazer as coisas que funcionou nos primeiros anos, o dono decidindo tudo, o time pequeno se ajustando na conversa, o controle de cabeça, começa a rachar. Não porque piorou. Porque o tamanho mudou.</p>
     <p>Isso é o que chamamos de transição de complexidade. Não é uma crise, é uma fase natural entre um jeito de gerir e outro. O problema é que a maioria das empresas só percebe que está nessa fase quando os sintomas já apareceram: prazo perdido, cliente insatisfeito, margem caindo sem explicação clara, decisão importante travada esperando o dono ter tempo.</p>
@@ -250,8 +273,51 @@
 
 <footer>
   <div class="wrap">
-    <img src="../assets/logo-bordeaux.png" alt="EXPLORE">
-    EXPLORE Desenvolvimento de Gente e Gestão<br>Rio de Janeiro, RJ<br>© 2026. Todos os direitos reservados.
+    <div class="footer-grid">
+      <div class="footer-col">
+        <img src="../assets/logo-bordeaux.png" alt="EXPLORE" width="490" height="253" loading="lazy">
+        <p>Consultoria de desenvolvimento organizacional para PMEs em transição de complexidade.<br>Rio de Janeiro, RJ</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/explore_desenvolvimento/" target="_blank" rel="noopener" aria-label="Instagram da EXPLORE">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/explore-desenvolvimento-de-gente-e-gest%C3%A3o/" target="_blank" rel="noopener" aria-label="LinkedIn da EXPLORE">
+            <svg viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M20.47 2H3.53a1.45 1.45 0 0 0-1.47 1.43v17.14A1.45 1.45 0 0 0 3.53 22h16.94a1.45 1.45 0 0 0 1.47-1.43V3.43A1.45 1.45 0 0 0 20.47 2zM8.09 18.74h-3v-9h3zM6.59 8.48a1.74 1.74 0 1 1 0-3.48 1.74 1.74 0 0 1 0 3.48zM18.91 18.74h-3v-4.83c0-1.21-.43-2-1.52-2a1.65 1.65 0 0 0-1.55 1.1 2.4 2.4 0 0 0-.1.75v5h-3s.05-8.1 0-9h3v1.3a3 3 0 0 1 2.7-1.5c2 0 3.47 1.29 3.47 4z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="../index.html#o-que-fazemos">O que fazemos</a></li>
+          <li><a href="../index.html#servicos">Serviços</a></li>
+          <li><a href="../index.html#quem-somos">Quem somos</a></li>
+          <li><a href="../index.html#clientes">Clientes</a></li>
+          <li><a href="../index.html#como-trabalhamos">Como trabalhamos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Serviços</h4>
+        <ul>
+          <li><a href="../servicos/jornada-oriente.html">Jornada Oriente</a></li>
+          <li><a href="../servicos/recrutamento-selecao.html">Recrutamento e Seleção</a></li>
+          <li><a href="../servicos/treinamentos-liderancas.html">Treinamentos e Lideranças</a></li>
+          <li><a href="../servicos/gestao-riscos-psicossociais.html">Riscos Psicossociais (NR-1)</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li><a href="../index.html#contato">Fale com a gente</a></li>
+          <li><a href="../index.html#diagnostico">Diagnóstico rápido</a></li>
+          <li><a href="https://wa.me/5521972593975" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 EXPLORE Desenvolvimento de Gente e Gestão. Todos os direitos reservados.</span>
+      <a href="../index.html#privacidade">Política de Privacidade</a>
+    </div>
   </div>
 </footer>
 
