@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<script>document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Conteúdo | EXPLORE — Textos e ideias sobre gestão de PMEs</title>
@@ -90,7 +91,7 @@
   /* hero da página */
   .hero-conteudo{ padding: 60px 0 0; }
   .hero-conteudo h1{ font-size: 40px; margin-bottom: 14px; letter-spacing: -0.01em; }
-  .conteudo-banner{ width:100%; overflow:hidden; margin-top:40px; border-bottom: 1px solid var(--line); }
+  .conteudo-banner{ width:100%; overflow:hidden; margin-top:40px; border-bottom: 1px solid var(--line); aspect-ratio: 2.6; }
   .conteudo-banner img{ width:100%; height:100%; object-fit:cover; display:block; }
 
   /* lista de artigos */
@@ -126,10 +127,10 @@
   .voltar-topo svg{ width:18px; height:18px; }
 
   /* revelar ao rolar */
-  .reveal{ opacity:0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
-  .reveal.visivel{ opacity:1; transform: translateY(0); }
+  .js .artigo-item, .js .artigo-full, .js article{ opacity:0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .artigo-item.visivel, .artigo-full.visivel, article.visivel{ opacity:1; transform: translateY(0); }
   @media (prefers-reduced-motion: reduce){
-    .reveal{ opacity:1; transform:none; transition:none; }
+    .js .artigo-item, .js .artigo-full, .js article{ opacity:1; transform:none; transition:none; }
   }
 
   .artigo-item{
@@ -177,7 +178,7 @@
       <li><a href="index.html#o-que-fazemos">O que fazemos</a></li>
       <li><a href="index.html#servicos">Serviços</a></li>
       <li><a href="index.html#como-trabalhamos">Como trabalhamos</a></li>
-      <li><a href="index.html#casos">Casos</a></li>
+      <li><a href="index.html#clientes">Clientes</a></li>
       <li><a href="index.html#diagnostico">Diagnóstico</a></li>
       <li><a href="insights.html">Conteúdo</a></li>
       <li><a href="index.html#faq">Dúvidas</a></li>
@@ -203,7 +204,7 @@
 <div class="conteudo-banner">
   <picture>
     <source srcset="assets/conteudo-banner.webp" type="image/webp">
-    <img src="assets/conteudo-banner.jpg" alt="Roda de conversa durante um encontro de desenvolvimento da EXPLORE" loading="lazy">
+    <img src="assets/conteudo-banner.jpg" alt="Roda de conversa durante um encontro de desenvolvimento da EXPLORE" loading="lazy" width="1200" height="461">
   </picture>
 </div>
 
@@ -341,7 +342,6 @@
   (function(){
     var alvos = document.querySelectorAll('.artigo-item, .artigo-full, article');
     if (!alvos.length || !('IntersectionObserver' in window)) return;
-    alvos.forEach(function(el){ el.classList.add('reveal'); });
     var obs = new IntersectionObserver(function(entradas){
       entradas.forEach(function(entrada){
         if (entrada.isIntersecting){

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<script>document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EXPLORE — Desenvolvimento de Gente e Gestão | Consultoria para PMEs em todo o Brasil</title>
@@ -8,7 +9,6 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#612B4A">
 <link rel="preconnect" href="https://api.web3forms.com">
-<!-- TODO: troque pela URL final assim que a página estiver publicada no GitHub Pages -->
 <link rel="canonical" href="https://exploredesenvolvimento.github.io/landingpage/">
 
 <!-- Open Graph / compartilhamento em WhatsApp, LinkedIn, etc -->
@@ -70,17 +70,17 @@
     {
       "@type": "Question",
       "name": "Para que tamanho de empresa a EXPLORE trabalha?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Empresas de 10 a 150 colaboradores, faturando entre R$ 3 milhões e R$ 30 milhões por ano, que já sentem que a forma como foram criadas não aguenta mais o tamanho atual." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Empresas de 10 a 150 colaboradores, faturando entre R$ 3 milhões e R$ 30 milhões por ano. O sinal não é só o número: é quando toda decisão ainda passa pelo dono ou sócio, processo importante mora só na cabeça de uma pessoa, e o jeito que funcionava com 15 pessoas já não aguenta com 50." }
     },
     {
       "@type": "Question",
       "name": "Quanto tempo dura um projeto?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Varia com o escopo, mas a maioria dos projetos de estruturação organizacional roda entre 3 e 6 meses, com acompanhamento contínuo depois disso." }
+      "acceptedAnswer": { "@type": "Answer", "text": "O diagnóstico completo dos 5 pilares leva cerca de 2 semanas, entre formulário e entrevistas presenciais. A partir daí, o Mapa de Orientação roda em ciclos de 30, 60 e 90 dias. Treinamentos e workshops avulsos podem ser um único encontro de meio período." }
     },
     {
       "@type": "Question",
       "name": "Preciso parar a operação para fazer o diagnóstico?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Não. O diagnóstico é feito em paralelo à operação normal, com entrevistas e formulários que não exigem parar o time." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Não. O diagnóstico roda em paralelo à operação normal, com formulário respondido em minutos e entrevistas presenciais agendadas sem interromper o dia a dia. Depois do diagnóstico, o único compromisso fixo é um ritual de gestão semanal, geralmente de 1 hora." }
     },
     {
       "@type": "Question",
@@ -90,7 +90,7 @@
     {
       "@type": "Question",
       "name": "Como funciona o primeiro contato?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Você preenche o formulário ou faz o diagnóstico rápido acima. A partir daí, marcamos uma conversa sem custo para entender seu cenário antes de qualquer proposta." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Você preenche o formulário ou faz o diagnóstico rápido acima. A partir daí, marcamos uma conversa sem custo para entender seu cenário e se faz sentido seguir pra uma proposta." }
     },
     {
       "@type": "Question",
@@ -100,12 +100,12 @@
     {
       "@type": "Question",
       "name": "Qual é o investimento necessário?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Varia com o escopo e a complexidade do projeto. Definimos o valor certo depois do diagnóstico inicial, quando já sabemos exatamente o que a sua empresa precisa." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Varia com o escopo, mas como referência: um diagnóstico completo fica na faixa de R$ 10 a 12 mil, um programa completo de estruturação organizacional entre R$ 60 e 80 mil, e treinamentos vivenciais avulsos partem de R$ 8 a 9 mil por turma." }
     },
     {
       "@type": "Question",
       "name": "A EXPLORE atende empresas de qualquer setor?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sim, desde que estejam dentro do perfil de porte e faturamento que atendemos. Já trabalhamos com saúde e bem-estar, serviços jurídicos, varejo, energia e hotelaria, entre outros." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Sim, desde que estejam dentro do perfil de porte e faturamento que atendemos. Hoje atendemos empresas de hotelaria, educação, varejo, indústria, serviços jurídicos, saúde, tecnologia e decoração, entre outros." }
     }
   ]
 }
@@ -196,7 +196,7 @@
   .btn-outline:hover{ background: var(--bordeaux); color:#fff; }
 
   /* hero */
-  .hero-banner{ width:100%; overflow:hidden; }
+  .hero-banner{ width:100%; overflow:hidden; aspect-ratio: 2.4; }
   .hero-banner img{ width:100%; height:100%; object-fit:cover; display:block; }
   .hero{ padding: 88px 0 80px; position: relative; }
   .hero .wrap{ position: relative; z-index:1; }
@@ -215,10 +215,26 @@
   /* quem somos */
   /* clientes */
   .clientes{ background: var(--paper); }
-  .clientes-marquee{ width:100%; overflow:hidden; margin-top: 40px; -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent); }
+  .clientes-marquee{ width:100%; overflow:hidden; margin-top: 4px; padding-top: 84px; -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent); }
   .clientes-track{ display:flex; align-items:center; gap: 64px; width:max-content; animation: rolar-clientes 38s linear infinite; }
   .clientes-marquee:hover .clientes-track{ animation-play-state: paused; }
-  .cliente-item{ flex-shrink:0; display:flex; align-items:center; justify-content:center; height:64px; }
+  .cliente-item{ flex-shrink:0; display:flex; align-items:center; justify-content:center; height:64px; position:relative; }
+  .ci-tooltip{
+    position:absolute; bottom: calc(100% + 12px); left:50%; transform:translateX(-50%) translateY(6px);
+    background: var(--bordeaux); color:#fff; padding:10px 14px; border-radius:4px;
+    font-size:12.5px; white-space:normal; width:max-content; max-width:150px; opacity:0; pointer-events:none;
+    transition: opacity 0.18s ease, transform 0.18s ease; z-index:30; text-align:center;
+  }
+  .ci-tooltip::after{
+    content:""; position:absolute; top:100%; left:50%; transform:translateX(-50%);
+    border:6px solid transparent; border-top-color: var(--bordeaux);
+  }
+  .ci-tooltip strong{ display:block; font-family: Georgia, serif; font-size:13.5px; }
+  .ci-tooltip span{ display:block; color:#E8D9DE; font-size:11px; margin-top:2px; }
+  .cliente-item:hover .ci-tooltip{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .clientes-track .cliente-item:first-child .ci-tooltip{ left:0; transform:translateX(0) translateY(6px); }
+  .clientes-track .cliente-item:first-child .ci-tooltip::after{ left:24px; transform:none; }
+  .clientes-track .cliente-item:first-child:hover .ci-tooltip{ transform:translateX(0) translateY(0); }
   .cliente-item img{ max-height:52px; max-width:150px; width:auto; height:auto; object-fit:contain; transition: transform 0.22s ease; }
   .cliente-item:hover img{ transform: scale(1.28); }
   .cliente-item.texto{ font-family: Georgia, serif; font-size:14.5px; color: var(--bordeaux-escuro); text-align:center; font-weight:700; line-height:1.3; transition: transform 0.22s ease; }
@@ -296,6 +312,16 @@
   .os-card li{ font-size:13.5px; color: var(--ink-soft); padding: 6px 0 6px 16px; border-top:1px solid var(--line); position:relative; }
   .os-card li:first-child{ border-top:none; }
   .os-card li::before{ content:"—"; position:absolute; left:0; color: var(--brass-text); }
+  .os-saiba-mais{ margin-top: 16px; padding-top:14px; border-top:1px solid var(--line); }
+  .os-saiba-mais summary{
+    cursor:pointer; font-weight:600; color: var(--bordeaux); font-size:13.5px;
+    list-style:none; display:flex; align-items:center; gap:6px;
+  }
+  .os-saiba-mais summary::-webkit-details-marker{ display:none; }
+  .os-saiba-mais summary::after{ content:"+"; font-size:16px; color: var(--brass-text); }
+  .os-saiba-mais[open] summary::after{ content:"–"; }
+  .os-saiba-mais p{ margin-top: 12px; font-size:13.5px; color: var(--ink-soft); }
+  .os-saiba-mais p + p{ margin-top: 10px; }
   .oriente-entregaveis{ margin-top: 30px; padding-top: 22px; border-top:1px solid rgba(255,255,255,0.2); font-size:13.5px; color:#E8D9DE; }
   .oriente-entregaveis strong{ color:#fff; }
   .oriente-pilares{ font-size:13px; color:#E3B975; margin-top:6px; }
@@ -332,35 +358,6 @@
   .passo h3{ font-size:16px; color: var(--bordeaux-escuro); margin-bottom:8px; }
   .passo p{ font-size:14px; color: var(--ink-soft); }
 
-  /* metodologias */
-  .metodologias{ background: var(--paper-alt); }
-  .metodologias .wrap{ max-width: 720px; }
-  .metod-lista{ display:flex; flex-wrap:wrap; gap: 14px; justify-content:center; }
-  .metodologias-titulo{ text-align:center; margin-bottom: 30px; }
-  .metod-pill{
-    border:1px solid var(--line); border-radius: 3px; padding: 10px 22px;
-    font-size: 14px; color: var(--ink-soft); background: var(--paper);
-    cursor:pointer; font-family: inherit; transition: border-color 0.15s ease, color 0.15s ease;
-  }
-  .metod-pill:hover{ border-color: var(--brass); color: var(--bordeaux-escuro); }
-  .metod-pill.ativo{ background: var(--bordeaux); border-color: var(--bordeaux); color:#fff; }
-  .metod-descricao{
-    display:none; margin-top: 22px; padding: 20px 24px; background: var(--paper);
-    border-left: 3px solid var(--brass); font-size: 14.5px; color: var(--ink-soft); text-align:left;
-  }
-  .metod-descricao.ativo{ display:block; }
-  .metod-descricao strong{ color: var(--bordeaux-escuro); }
-
-  /* casos */
-  .casos{ background: var(--paper); }
-  .casos-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border:1px solid var(--line); margin-top: 40px; }
-  .caso{ background: var(--paper); padding: 34px 26px; box-shadow: 0 3px 10px rgba(67,30,51,0.08); transition: transform 0.18s ease, box-shadow 0.18s ease; }
-  .caso:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(67,30,51,0.08); }
-  .caso .segmento{ display:inline-block; font-size:11.5px; color: var(--bordeaux-escuro); font-weight:700; letter-spacing:0.02em; background: rgba(97,43,74,0.07); padding:4px 10px; border-radius:3px; margin-bottom: 14px; }
-  .caso h3{ font-size:17px; color: var(--bordeaux-escuro); margin-bottom: 10px; }
-  .caso p{ font-size: 14px; color: var(--ink-soft); margin-bottom: 14px; }
-  .caso .resultado{ font-size: 13.5px; font-weight:600; color: var(--bordeaux); border-top:1px solid var(--line); padding-top: 12px; }
-  .casos-nota{ font-size: 13px; color: var(--ink-soft); text-align:center; margin-top: 24px; }
 
   /* diagnostico */
   .diagnostico{ background: var(--bordeaux); }
@@ -460,6 +457,29 @@
   }
   .wa-float svg{ width:28px; height:28px; fill:#fff; }
 
+  .barra-progresso{ position:fixed; top:0; left:0; height:3px; background: var(--brass); width:0%; z-index:100; transition: width 0.1s linear; }
+
+  .nav-pontos{
+    position:fixed; right:22px; top:50%; transform:translateY(-50%); z-index:60;
+    display:flex; flex-direction:column; gap:14px; align-items:center;
+  }
+  .nav-ponto{
+    width:9px; height:9px; border-radius:50%; border:1.5px solid var(--bordeaux);
+    background:#fff; box-shadow: 0 0 0 2px rgba(255,255,255,0.5); cursor:pointer; padding:0; position:relative; transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .nav-ponto:hover{ transform: scale(1.3); }
+  .nav-ponto.ativo{ background: var(--bordeaux); transform: scale(1.3); }
+  .nav-ponto .np-label{
+    position:absolute; right: calc(100% + 12px); top:50%; transform:translateY(-50%);
+    background: var(--bordeaux); color:#fff; font-size:12px; font-weight:600;
+    padding:6px 12px; border-radius:4px; white-space:nowrap;
+    opacity:0; pointer-events:none; transition: opacity 0.15s ease;
+  }
+  .nav-ponto:hover .np-label{ opacity:1; }
+  @media (max-width: 1100px){
+    .nav-pontos{ display:none; }
+  }
+
   .voltar-topo{
     position:fixed; bottom:30px; right:92px; width:44px; height:44px; border-radius:50%;
     background: var(--paper); border:1px solid var(--line); box-shadow:0 2px 8px rgba(0,0,0,0.12);
@@ -470,10 +490,14 @@
   .voltar-topo:hover{ transform: translateY(-2px); }
   .voltar-topo svg{ width:18px; height:18px; }
 
-  .reveal{ opacity:0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
-  .reveal.visivel{ opacity:1; transform: translateY(0); }
+  .js .dor-card, .js .os-card, .js .servico, .js .artigo-card, .js .oriente-box, .js .socio-card{
+    opacity:0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  .dor-card.visivel, .os-card.visivel, .servico.visivel, .artigo-card.visivel, .oriente-box.visivel, .socio-card.visivel{
+    opacity:1; transform: translateY(0);
+  }
   @media (prefers-reduced-motion: reduce){
-    .reveal{ opacity:1; transform:none; transition:none; }
+    .js .dor-card, .js .os-card, .js .servico, .js .artigo-card, .js .oriente-box, .js .socio-card{ opacity:1; transform:none; transition:none; }
   }
 
   @media (max-width: 860px){
@@ -490,7 +514,6 @@
     .oriente-passos{ grid-template-columns: 1fr; gap: 24px; }
     .oriente-passos::before{ display:none; }
     .outros-servicos-grid{ grid-template-columns: 1fr; }
-    .casos-grid{ grid-template-columns: 1fr; }
     .passos{ grid-template-columns: 1fr 1fr; }
     .nav-toggle{ display:flex; }
     .nav-links{
@@ -508,6 +531,21 @@
 </head>
 <body>
 
+<div class="barra-progresso" id="barraProgresso"></div>
+
+<nav class="nav-pontos" id="navPontos" aria-label="Navegação por seção">
+  <button class="nav-ponto" data-alvo="quem-somos" aria-label="Ir para Quem somos"><span class="np-label">Quem somos</span></button>
+  <button class="nav-ponto" data-alvo="clientes" aria-label="Ir para Clientes"><span class="np-label">Clientes</span></button>
+  <button class="nav-ponto" data-alvo="socios" aria-label="Ir para Sócios"><span class="np-label">Sócios</span></button>
+  <button class="nav-ponto" data-alvo="o-que-fazemos" aria-label="Ir para O que fazemos"><span class="np-label">O que fazemos</span></button>
+  <button class="nav-ponto" data-alvo="servicos" aria-label="Ir para Serviços"><span class="np-label">Serviços</span></button>
+  <button class="nav-ponto" data-alvo="como-trabalhamos" aria-label="Ir para Como trabalhamos"><span class="np-label">Como trabalhamos</span></button>
+  <button class="nav-ponto" data-alvo="diagnostico" aria-label="Ir para Diagnóstico"><span class="np-label">Diagnóstico</span></button>
+  <button class="nav-ponto" data-alvo="faq" aria-label="Ir para Dúvidas"><span class="np-label">Dúvidas</span></button>
+  <button class="nav-ponto" data-alvo="conteudo" aria-label="Ir para Conteúdo"><span class="np-label">Conteúdo</span></button>
+  <button class="nav-ponto" data-alvo="contato" aria-label="Ir para Contato"><span class="np-label">Contato</span></button>
+</nav>
+
 <header>
   <nav class="wrap nav">
     <a href="index.html" class="logo"><img src="assets/logo-bordeaux.png" alt="EXPLORE Desenvolvimento de Gente e Gestão" width="490" height="253"></a>
@@ -516,7 +554,7 @@
       <li><a href="#o-que-fazemos">O que fazemos</a></li>
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#como-trabalhamos">Como trabalhamos</a></li>
-      <li><a href="#casos">Casos</a></li>
+      <li><a href="#clientes">Clientes</a></li>
       <li><a href="#diagnostico">Diagnóstico</a></li>
       <li><a href="insights.html">Conteúdo</a></li>
       <li><a href="#faq">Dúvidas</a></li>
@@ -561,7 +599,7 @@
 <div class="hero-banner">
   <picture>
     <source srcset="assets/hero-banner.webp" type="image/webp">
-    <img src="assets/hero-banner.jpg" alt="Equipe reunida durante um encontro presencial de desenvolvimento com a EXPLORE">
+    <img src="assets/hero-banner.jpg" alt="Equipe reunida durante um encontro presencial de desenvolvimento com a EXPLORE" width="1200" height="500">
   </picture>
 </div>
 
@@ -614,7 +652,7 @@
       <div class="qs-foto">
         <picture>
           <source srcset="assets/quem-somos-foto.webp" type="image/webp">
-          <img src="assets/quem-somos-foto.jpg" alt="Dinâmica de confiança durante um encontro de desenvolvimento da EXPLORE" loading="lazy">
+          <img src="assets/quem-somos-foto.jpg" alt="Dinâmica de confiança durante um encontro de desenvolvimento da EXPLORE" loading="lazy" width="1200" height="900">
         </picture>
       </div>
       <blockquote class="qs-destaque">
@@ -624,33 +662,33 @@
   </div>
 </section>
 
-<section class="clientes">
+<section class="clientes" id="clientes">
   <div class="wrap">
     <span class="kicker">Prova social</span>
     <h2>Quem já confiou na EXPLORE</h2>
     <p class="lead">Setores distintos, portes diferentes. Um ponto em comum: chegaram num momento em que o instinto não era mais suficiente.</p>
     <div class="clientes-marquee">
       <div class="clientes-track">
-        <div class="cliente-item"><img src="assets/clientes/casa-shopping.png" alt="CASA Shopping" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/radisson.png" alt="Radisson" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/novotel.png" alt="Novotel" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/esuites-transamerica.png" alt="e-Suites Transamerica" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/miniso.png" alt="Miniso" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/unifenas.png" alt="Unifenas" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/hidrocenter.png" alt="Hidrocenter" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/multipark.png" alt="MultiPark" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/wellbore-integrity.png" alt="Wellbore Integrity Solutions" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/jln-consultoria.png" alt="JLN Consultoria" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/souza-marques.png" alt="Fundação Técnico-Educacional Souza Marques" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/grupo-holanda.png" alt="Ni Holanda" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/global-alpinismo.png" alt="Global Alpinismo Industrial" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/michele-werner.png" alt="Michele Werner Medicina Estética" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/im.png" alt="IM" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/boutique-n.png" alt="Cliente da EXPLORE" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/equinix.png" alt="Equinix" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/hathi.png" alt="Galeria Hathi" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/benevides.png" alt="Marcello Benevides Advogados Associados" loading="lazy"></div>
-        <div class="cliente-item"><img src="assets/clientes/zenite.png" alt="Clínica Oral Zênite" loading="lazy"></div>
+        <div class="cliente-item"><img src="assets/clientes/casa-shopping.png" alt="CASA Shopping" loading="lazy"><span class="ci-tooltip"><strong>CASA Shopping</strong><span>Shopping center</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/radisson.png" alt="Radisson" loading="lazy"><span class="ci-tooltip"><strong>Radisson</strong><span>Rede hoteleira internacional</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/novotel.png" alt="Novotel" loading="lazy"><span class="ci-tooltip"><strong>Novotel</strong><span>Rede hoteleira internacional</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/esuites-transamerica.png" alt="e-Suites Transamerica" loading="lazy"><span class="ci-tooltip"><strong>e-Suites Transamerica</strong><span>Hotelaria</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/miniso.png" alt="Miniso" loading="lazy"><span class="ci-tooltip"><strong>Miniso</strong><span>Varejo</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/unifenas.png" alt="Unifenas" loading="lazy"><span class="ci-tooltip"><strong>Unifenas</strong><span>Instituição de ensino superior</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/hidrocenter.png" alt="Hidrocenter" loading="lazy"><span class="ci-tooltip"><strong>Hidrocenter</strong><span>Sistemas contra incêndio</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/multipark.png" alt="MultiPark" loading="lazy"><span class="ci-tooltip"><strong>MultiPark</strong><span>Estacionamentos</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/wellbore-integrity.png" alt="Wellbore Integrity Solutions" loading="lazy"><span class="ci-tooltip"><strong>Wellbore Integrity Solutions</strong><span>Indústria de óleo e gás</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/jln-consultoria.png" alt="JLN Consultoria" loading="lazy"><span class="ci-tooltip"><strong>JLN Consultoria</strong><span>Consultoria</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/souza-marques.png" alt="Fundação Técnico-Educacional Souza Marques" loading="lazy"><span class="ci-tooltip"><strong>Fundação Técnico-Educacional Souza Marques</strong><span>Instituição de ensino</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/grupo-holanda.png" alt="Ni Holanda" loading="lazy"><span class="ci-tooltip"><strong>Ni Holanda</strong><span>Cliente EXPLORE</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/global-alpinismo.png" alt="Global Alpinismo Industrial" loading="lazy"><span class="ci-tooltip"><strong>Global Alpinismo Industrial</strong><span>Serviços industriais em altura</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/michele-werner.png" alt="Michele Werner Medicina Estética" loading="lazy"><span class="ci-tooltip"><strong>Michele Werner Medicina Estética</strong><span>Saúde e estética</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/im.png" alt="IM" loading="lazy"><span class="ci-tooltip"><strong>IM</strong><span>Cliente EXPLORE</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/boutique-n.png" alt="Cliente da EXPLORE" loading="lazy"><span class="ci-tooltip"><strong>Cliente EXPLORE</strong></span></div>
+        <div class="cliente-item"><img src="assets/clientes/equinix.png" alt="Equinix" loading="lazy"><span class="ci-tooltip"><strong>Equinix</strong><span>Tecnologia e data centers</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/hathi.png" alt="Galeria Hathi" loading="lazy"><span class="ci-tooltip"><strong>Galeria Hathi</strong><span>Decoração e design de interiores</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/benevides.png" alt="Marcello Benevides Advogados Associados" loading="lazy"><span class="ci-tooltip"><strong>Marcello Benevides Advogados Associados</strong><span>Serviços jurídicos</span></span></div>
+        <div class="cliente-item"><img src="assets/clientes/zenite.png" alt="Clínica Oral Zênite" loading="lazy"><span class="ci-tooltip"><strong>Clínica Oral Zênite</strong><span>Odontologia</span></span></div>
         <!-- lista duplicada pra loop continuo sem emenda -->
         <div class="cliente-item" aria-hidden="true"><img src="assets/clientes/casa-shopping.png" alt="" loading="lazy"></div>
         <div class="cliente-item" aria-hidden="true"><img src="assets/clientes/radisson.png" alt="" loading="lazy"></div>
@@ -775,6 +813,11 @@
           <li>Avaliação comportamental do candidato final</li>
           <li>Onboarding acompanhado nos primeiros 90 dias</li>
         </ul>
+        <details class="os-saiba-mais">
+          <summary>Saiba mais</summary>
+          <p>Contratar errado custa caro: tempo de onboarding perdido, reposição, impacto no time que já está sobrecarregado. Por isso o processo começa antes da vaga aberta, mapeando com o gestor o que a função exige de verdade, técnico e comportamental, não só o que aparece no currículo.</p>
+          <p>Cada etapa é estruturada com roteiro de entrevista padronizado, pra não depender do faro de quem entrevista naquele dia. O candidato final passa por avaliação comportamental antes da proposta, e o acompanhamento não termina na assinatura: seguimos até os primeiros 90 dias pra garantir que a contratação performa como esperado na prática, não só no papel.</p>
+        </details>
       </div>
       <div class="os-card">
         <h4>Treinamentos e desenvolvimento de lideranças</h4>
@@ -785,6 +828,11 @@
           <li>Dinâmicas práticas com debriefing conectado ao trabalho</li>
           <li>Formato presencial ou híbrido, sob medida pro porte do time</li>
         </ul>
+        <details class="os-saiba-mais">
+          <summary>Saiba mais</summary>
+          <p>A maior parte dos treinamentos de liderança do mercado é genérica: a mesma apresentação serve pra qualquer empresa. O nosso parte de um diagnóstico comportamental real da equipe antes de montar qualquer conteúdo, usando instrumentos de avaliação comportamental aplicados em formato coletivo, pra entender de verdade os perfis do time, não pra preencher slide.</p>
+          <p>A partir disso, desenhamos dinâmicas vivenciais, não palestra, com debriefing conectado ao trabalho real e devolutiva coletiva de perfis. Cada participante sai sabendo seu próprio padrão de comportamento sob pressão, decisão e conflito, e a liderança sai com um mapa real da equipe, não uma impressão.</p>
+        </details>
       </div>
       <div class="os-card">
         <h4>Gestão de riscos psicossociais</h4>
@@ -795,6 +843,11 @@
           <li>Plano de ação com prazos e responsáveis</li>
           <li>Capacitação de lideranças para identificar sinais de risco</li>
         </ul>
+        <details class="os-saiba-mais">
+          <summary>Saiba mais</summary>
+          <p>Desde maio de 2026, a Portaria MTE 1.419/2025 exige que toda empresa com empregados registrados pela CLT, independente do porte, inclua riscos psicossociais no GRO (Gerenciamento de Riscos Ocupacionais). Sobrecarga, assédio moral, conflitos crônicos e jornadas exaustivas deixaram de ser um problema "de RH" e passaram a ser item de fiscalização, documentado no PGR, com plano de ação, prazos e responsáveis definidos.</p>
+          <p>Conduzimos esse mapeamento com a mesma lógica dos 5 pilares que usamos no diagnóstico da Jornada Oriente, aplicada ao pilar de pessoas: entrevistas, observação de campo e os mesmos instrumentos comportamentais que já usamos em treinamento. O resultado não é só um documento pronto pra auditoria, é um retrato real de onde a operação está sob pressão, antes que vire afastamento ou passivo trabalhista.</p>
+        </details>
         <div class="selo">NR-1</div>
       </div>
     </div>
@@ -827,53 +880,6 @@
         <p>Medimos resultado e ajustamos o que for preciso ao longo do caminho.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="metodologias">
-  <div class="wrap">
-    <div class="metodologias-titulo">
-      <span class="kicker">Ferramentas que usamos</span>
-      <h2>Metodologias conhecidas, aplicadas de forma simples</h2>
-    </div>
-    <div class="metod-lista">
-      <button class="metod-pill" data-metod="scrum">Scrum</button>
-      <button class="metod-pill" data-metod="kanban">Kanban</button>
-      <button class="metod-pill" data-metod="okrs">OKRs</button>
-      <button class="metod-pill" data-metod="lss">Lean Six Sigma</button>
-    </div>
-    <p class="metod-descricao" data-desc="scrum"><strong>Scrum:</strong> framework ágil que organiza o trabalho em ciclos curtos (sprints), com entregas e revisões frequentes. Ajuda times a ajustar prioridade rápido, sem esperar o projeto inteiro terminar para corrigir rota.</p>
-    <p class="metod-descricao" data-desc="kanban"><strong>Kanban:</strong> gestão visual de fluxo, com quadro de tarefas organizado por etapa. Deixa fácil ver onde o trabalho está travando antes que vire atraso.</p>
-    <p class="metod-descricao" data-desc="okrs"><strong>OKRs:</strong> metas qualitativas (Objectives) conectadas a resultados-chave mensuráveis (Key Results), revisados em ciclos curtos. Mantém o time remando na mesma direção sem perder o motivo por trás da meta.</p>
-    <p class="metod-descricao" data-desc="lss"><strong>Lean Six Sigma:</strong> combina redução de desperdício com controle estatístico de processo. Útil quando o problema não é falta de esforço, é variação: a mesma tarefa sai diferente dependendo de quem faz.</p>
-  </div>
-</section>
-
-<section class="casos" id="casos">
-  <div class="wrap">
-    <span class="kicker">Casos reais</span>
-    <h2>Empresas que já estruturamos</h2>
-    <div class="casos-grid">
-      <div class="caso">
-        <div class="segmento">Saúde e bem-estar</div>
-        <h3>Programa de liderança em 4 encontros</h3>
-        <p>Time de gestores sem linguagem comum de liderança, decisões concentradas em poucas pessoas.</p>
-        <div class="resultado">Resultado: liderança treinada em comunicação e gestão de conflito, com metodologia própria de perfil comportamental.</div>
-      </div>
-      <div class="caso">
-        <div class="segmento">Serviços jurídicos</div>
-        <h3>Diagnóstico organizacional completo</h3>
-        <p>Escritório em crescimento sem visibilidade sobre saúde do time e riscos de sobrecarga.</p>
-        <div class="resultado">Resultado: índice de saúde do time calculado e mapa de riscos priorizado por urgência.</div>
-      </div>
-      <div class="caso">
-        <div class="segmento">Varejo</div>
-        <h3>Auditoria de estoque em três lojas</h3>
-        <p>Rede varejista sem controle confiável sobre o que realmente tinha em estoque.</p>
-        <div class="resultado">Resultado: 1.310 itens auditados, com dashboard e planilha de controle entregues ao time.</div>
-      </div>
-    </div>
-    <p class="casos-nota">Nomes de clientes disponíveis mediante autorização. Casos descritos de forma anonimizada por segmento.</p>
   </div>
 </section>
 
@@ -990,35 +996,35 @@
     <div class="faq-lista">
       <details open>
         <summary>Para que tamanho de empresa a EXPLORE trabalha?</summary>
-        <p>Empresas de 10 a 150 colaboradores, faturando entre R$ 3 milhões e R$ 30 milhões por ano, que já sentem que a forma como foram criadas não aguenta mais o tamanho atual.</p>
+        <p>Empresas de 10 a 150 colaboradores, faturando entre R$ 3 milhões e R$ 30 milhões por ano. O sinal não é só o número: é quando toda decisão ainda passa pelo dono ou sócio, processo importante mora só na cabeça de uma pessoa, e o jeito que funcionava com 15 pessoas já não aguenta com 50.</p>
       </details>
       <details>
         <summary>Quanto tempo dura um projeto?</summary>
-        <p>Varia com o escopo, mas a maioria dos projetos de estruturação organizacional roda entre 3 e 6 meses, com acompanhamento contínuo depois disso.</p>
+        <p>O diagnóstico completo dos 5 pilares (estratégia, pessoas, operações, financeiro e governança) leva cerca de 2 semanas, entre formulário e entrevistas presenciais. A partir daí, o Mapa de Orientação roda em ciclos de 30, 60 e 90 dias: primeiro o mapa de decisão, depois estrutura formal, por último cultura documentada. Treinamentos e workshops avulsos podem ser um único encontro de meio período.</p>
       </details>
       <details>
         <summary>Preciso parar a operação para fazer o diagnóstico?</summary>
-        <p>Não. O diagnóstico é feito em paralelo à operação normal, com entrevistas e formulários que não exigem parar o time.</p>
+        <p>Não. O diagnóstico roda em paralelo à operação normal, com formulário respondido em minutos pelos sócios e equipe-chave, e entrevistas presenciais agendadas sem interromper o dia a dia. Depois do diagnóstico, o único compromisso fixo é um ritual de gestão semanal, geralmente de 1 hora.</p>
       </details>
       <details>
         <summary>Vocês atendem empresas de todo o Brasil?</summary>
-        <p>Sim. Nossa sede é no Rio de Janeiro, mas atendemos empresas em todo o Brasil, com diagnóstico e acompanhamento remoto e viagens presenciais quando o projeto pede.</p>
+        <p>Sim. Nossa sede é no Rio de Janeiro, mas atendemos empresas em todo o Brasil, com diagnóstico e acompanhamento remoto e viagens presenciais quando o projeto pede (treinamentos vivenciais, por exemplo, costumam ser presenciais).</p>
       </details>
       <details>
         <summary>Como funciona o primeiro contato?</summary>
-        <p>Você preenche o formulário ou faz o diagnóstico rápido acima. A partir daí, marcamos uma conversa sem custo para entender seu cenário antes de qualquer proposta.</p>
+        <p>Você preenche o formulário ou faz o diagnóstico rápido acima. A partir daí, marcamos uma conversa sem custo pra entender seu cenário, os sinais que você já percebe e se faz sentido seguir pra uma proposta. Nada de formulário longo ou reunião de vendas disfarçada de diagnóstico.</p>
       </details>
       <details>
         <summary>Quando faz sentido contratar uma consultoria?</summary>
-        <p>Quando o crescimento começa a expor problema de margem, caixa, execução ou decisão. Sinais comuns: meta que não vira rotina, indicador que chega tarde, reunião sem encaminhamento e decisão concentrada em uma pessoa só.</p>
+        <p>Quando o crescimento começa a expor problema de margem, caixa, execução ou decisão. Sinais comuns: meta que não vira rotina, indicador que chega tarde, reunião sem encaminhamento, decisão concentrada em uma pessoa só, e a sensação de que o próximo salto não vai vir de mais cliente, vai vir de estrutura.</p>
       </details>
       <details>
         <summary>Qual é o investimento necessário?</summary>
-        <p>Varia com o escopo e a complexidade do projeto. Definimos o valor certo depois do diagnóstico inicial, quando já sabemos exatamente o que a sua empresa precisa.</p>
+        <p>Varia com o escopo, mas pra dar uma referência real: um diagnóstico completo dos 5 pilares fica na faixa de R$ 10 a 12 mil. Um programa completo de estruturação organizacional (diagnóstico + mapa de orientação em ciclos de 90 dias) costuma ficar entre R$ 60 e 80 mil. Treinamentos vivenciais avulsos partem de R$ 8 a 9 mil por turma. Definimos o valor exato depois do diagnóstico inicial, quando já sabemos o tamanho real do trabalho.</p>
       </details>
       <details>
         <summary>A EXPLORE atende empresas de qualquer setor?</summary>
-        <p>Sim, desde que estejam dentro do perfil de porte e faturamento que atendemos. Já trabalhamos com saúde e bem-estar, serviços jurídicos, varejo, energia e hotelaria, entre outros.</p>
+        <p>Sim, desde que estejam dentro do perfil de porte e faturamento que atendemos. Hoje atendemos empresas de hotelaria, educação, varejo, indústria, serviços jurídicos, saúde, tecnologia e decoração, entre outros — a metodologia dos 5 pilares funciona porque olha pra estrutura da empresa, não pro produto que ela vende.</p>
       </details>
     </div>
   </div>
@@ -1161,9 +1167,8 @@
 
   // Revelar seções ao rolar a página
   (function(){
-    var alvos = document.querySelectorAll('.dor-card, .os-card, .servico, .caso, .artigo-card, .oriente-box, .socio-card');
+    var alvos = document.querySelectorAll('.dor-card, .os-card, .servico, .artigo-card, .oriente-box, .socio-card');
     if (!alvos.length || !('IntersectionObserver' in window)) return;
-    alvos.forEach(function(el){ el.classList.add('reveal'); });
     var obs = new IntersectionObserver(function(entradas){
       entradas.forEach(function(entrada){
         if (entrada.isIntersecting){
@@ -1175,6 +1180,44 @@
     alvos.forEach(function(el){ obs.observe(el); });
   })();
 
+  // Pontos de navegação lateral
+  (function(){
+    var pontos = document.querySelectorAll('.nav-ponto');
+    if (!pontos.length) return;
+    var secoes = [];
+    pontos.forEach(function(ponto){
+      var id = ponto.getAttribute('data-alvo');
+      var secao = document.getElementById(id);
+      if (secao) secoes.push({ id: id, el: secao, ponto: ponto });
+      ponto.addEventListener('click', function(){
+        if (secao) secao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+    if (!secoes.length || !('IntersectionObserver' in window)) return;
+    var obs = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(entrada){
+        var item = secoes.find(function(s){ return s.el === entrada.target; });
+        if (!item) return;
+        if (entrada.isIntersecting) {
+          pontos.forEach(function(p){ p.classList.remove('ativo'); });
+          item.ponto.classList.add('ativo');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    secoes.forEach(function(s){ obs.observe(s.el); });
+  })();
+
+  // Barra de progresso de leitura
+  (function(){
+    var barra = document.getElementById('barraProgresso');
+    if (!barra) return;
+    window.addEventListener('scroll', function(){
+      var altura = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var progresso = altura > 0 ? (window.scrollY / altura) * 100 : 0;
+      barra.style.width = progresso + '%';
+    });
+  })();
+
   // Botão voltar ao topo
   (function(){
     var btn = document.getElementById('voltarTopo');
@@ -1184,26 +1227,6 @@
     });
     btn.addEventListener('click', function(){
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  })();
-
-  // Pills de metodologia clicáveis
-  (function(){
-    var pills = document.querySelectorAll('.metod-pill');
-    var descricoes = document.querySelectorAll('.metod-descricao');
-    if (!pills.length) return;
-    pills.forEach(function(pill){
-      pill.addEventListener('click', function(){
-        var alvo = pill.getAttribute('data-metod');
-        var jaAtivo = pill.classList.contains('ativo');
-        pills.forEach(function(p){ p.classList.remove('ativo'); });
-        descricoes.forEach(function(d){ d.classList.remove('ativo'); });
-        if (!jaAtivo) {
-          pill.classList.add('ativo');
-          var desc = document.querySelector('.metod-descricao[data-desc="' + alvo + '"]');
-          if (desc) desc.classList.add('ativo');
-        }
-      });
     });
   })();
 

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<script>document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Processo bom não trava a empresa, destrava | EXPLORE</title>
@@ -129,10 +130,10 @@
   .voltar-topo:hover{ transform: translateY(-2px); }
   .voltar-topo svg{ width:18px; height:18px; }
 
-  .reveal{ opacity:0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
-  .reveal.visivel{ opacity:1; transform: translateY(0); }
+  .js .rel-card{ opacity:0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .rel-card.visivel{ opacity:1; transform: translateY(0); }
   @media (prefers-reduced-motion: reduce){
-    .reveal{ opacity:1; transform:none; transition:none; }
+    .js .rel-card{ opacity:1; transform:none; transition:none; }
   }
 
   .relacionados{ background: var(--paper-alt); padding: 56px 0; }
@@ -176,7 +177,7 @@
       <li><a href="../index.html#o-que-fazemos">O que fazemos</a></li>
       <li><a href="../index.html#servicos">Serviços</a></li>
       <li><a href="../index.html#como-trabalhamos">Como trabalhamos</a></li>
-      <li><a href="../index.html#casos">Casos</a></li>
+      <li><a href="../index.html#clientes">Clientes</a></li>
       <li><a href="../index.html#diagnostico">Diagnóstico</a></li>
       <li><a href="../insights.html">Conteúdo</a></li>
       <li><a href="../index.html#faq">Dúvidas</a></li>
@@ -274,7 +275,6 @@
   (function(){
     var alvos = document.querySelectorAll('.rel-card');
     if (!alvos.length || !('IntersectionObserver' in window)) return;
-    alvos.forEach(function(el){ el.classList.add('reveal'); });
     var obs = new IntersectionObserver(function(entradas){
       entradas.forEach(function(entrada){
         if (entrada.isIntersecting){
