@@ -158,7 +158,13 @@
   h1{ font-family: Georgia, "Times New Roman", serif; }
   h2{ font-family: Georgia, "Times New Roman", serif; font-size: 36px; font-weight: 700; color: var(--bordeaux-escuro); margin-bottom: 16px; letter-spacing: -0.01em; }
   .kicker{ color: var(--brass-text); font-weight: 600; letter-spacing: 0.02em; margin-bottom: 10px; display:block; position:relative; padding-top:14px; }
-  .kicker::before{ content:""; position:absolute; top:0; left:0; width:32px; height:2px; background: var(--brass); }
+  .kicker::before{
+    content:""; position:absolute; top:1px; left:0; width:13px; height:13px; background: var(--kicker-color, var(--brass));
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0 C12.8 6.8 13.2 9.6 24 12 C13.2 14.4 12.8 17.2 12 24 C11.2 17.2 10.8 14.4 0 12 C10.8 9.6 11.2 6.8 12 0 Z"/></svg>');
+    -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat; -webkit-mask-position: center;
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0 C12.8 6.8 13.2 9.6 24 12 C13.2 14.4 12.8 17.2 12 24 C11.2 17.2 10.8 14.4 0 12 C10.8 9.6 11.2 6.8 12 0 Z"/></svg>');
+    mask-size: contain; mask-repeat: no-repeat; mask-position: center;
+  }
   .lead{ font-size: 18px; color: var(--ink-soft); max-width: 640px; }
 
   /* header */
@@ -169,9 +175,10 @@
     border-bottom: 1px solid var(--line);
   }
   header .wrap{ position: relative; }
-  .nav{ display:flex; align-items:center; justify-content:space-between; padding: 18px 0; gap: 24px; }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding: 18px 0; gap: 24px; box-sizing: border-box; }
+  header .nav{ padding-left: 24px; padding-right: 24px; }
   .logo{ display:flex; align-items:center; }
-  .logo img{ height: 34px; width:auto; }
+  .logo img{ height: 46px; width:auto; }
   .nav-links{ display:flex; gap: 26px; list-style:none; align-items:center; }
   .nav-links a{ text-decoration:none; font-size:14.5px; color: var(--ink-soft); white-space:nowrap; margin-right:26px; }
   .nav-links a:last-child{ margin-right:0; }
@@ -297,10 +304,21 @@
   /* servicos */
   .servicos{ background: var(--paper-alt); }
   .oriente-box{
-    background: var(--bordeaux); border-radius: 2px;
+    background: var(--bordeaux); border-radius: 12px;
     padding: 44px; margin-top: 40px;
+    box-shadow: 0 20px 48px rgba(67,30,51,0.28);
+    position: relative; overflow: hidden;
   }
-  .oriente-eyebrow{ font-size:12px; color: #E3B975; font-weight:700; margin-bottom:10px; }
+  .oriente-box > *{ position:relative; z-index:1; }
+  .oriente-watermark{
+    position:absolute; top:50%; right:-90px; transform:translateY(-50%);
+    width:420px; height:420px; opacity:0.05; z-index:0; pointer-events:none;
+  }
+  .oriente-eyebrow{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:11.5px; color: #E3B975; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+    margin-bottom:16px; padding: 5px 12px; border:1px solid rgba(227,185,117,0.45); border-radius: 20px;
+  }
   .oriente-box h3{ font-family: Georgia, "Times New Roman", serif; font-size: 26px; color:#fff; margin-bottom: 14px; }
   .oriente-box > p{ color:#E8D9DE; font-size:15px; max-width: 640px; margin-bottom: 34px; }
   .oriente-passos{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 30px; position:relative; margin-top: 6px; }
@@ -310,10 +328,12 @@
   }
   .oriente-passo{ position:relative; z-index:1; }
   .oriente-passo .n{
-    width:46px; height:46px; border-radius:50%; background: var(--bordeaux); border:2px solid #E3B975;
-    color: #E3B975; font-family: Georgia, serif; font-size: 19px; font-weight:700;
-    display:flex; align-items:center; justify-content:center; margin-bottom: 14px;
+    width:46px; height:46px; border-radius:50%; background: #E3B975; border:none;
+    color: var(--bordeaux-escuro); display:flex; align-items:center; justify-content:center; margin-bottom: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.18);
   }
+  .oriente-passo .n svg{ width:21px; height:21px; }
+  .oriente-passo .passo-num{ display:block; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#E3B975; margin-bottom:6px; }
   .oriente-passo h4{ font-size:16px; color:#fff; margin-bottom:8px; }
   .oriente-passo p{ font-size:14px; color:#E8D9DE; }
   .outros-servicos-titulo{ margin-top: 50px; margin-bottom: 8px; font-size:13px; color: var(--ink-soft); font-weight:600; }
@@ -335,10 +355,30 @@
   .os-saiba-mais[open] summary::after{ content:"–"; }
   .os-saiba-mais p{ margin-top: 12px; font-size:13.5px; color: var(--ink-soft); }
   .os-saiba-mais p + p{ margin-top: 10px; }
-  .os-link{ display:inline-block; margin-top: 16px; font-size:13.5px; font-weight:600; color: var(--bordeaux); text-decoration:underline; text-underline-offset:3px; }
+  .os-link{ display:inline-flex; align-items:center; gap:6px; margin-top: 16px; font-size:13.5px; font-weight:600; color: var(--bordeaux); text-decoration:none; }
+  .os-link::after{ content:"→"; transition: transform 0.15s ease; }
+  .os-link:hover::after{ transform: translateX(3px); }
+  .os-link:hover{ text-decoration:underline; text-underline-offset:3px; }
   .oriente-entregaveis{ margin-top: 30px; padding-top: 22px; border-top:1px solid rgba(255,255,255,0.2); font-size:13.5px; color:#E8D9DE; }
-  .oriente-entregaveis strong{ color:#fff; }
-  .oriente-link{ display:inline-block; margin-top: 20px; font-size:14px; font-weight:600; color:#E3B975; text-decoration:underline; text-underline-offset:3px; }
+  .oriente-entregaveis > strong{ display:block; color:#fff; font-size:14.5px; margin-bottom: 14px; }
+  .oriente-check{ list-style:none; padding:0; margin:0 0 14px; display:grid; grid-template-columns: repeat(3, 1fr); gap: 10px 24px; }
+  .oriente-check li{ position:relative; padding-left: 24px; font-size:13.5px; color:#E8D9DE; }
+  .oriente-check li::before{
+    content:""; position:absolute; left:0; top:3px; width:15px; height:15px; border-radius:50%;
+    background: rgba(227,185,117,0.18); border:1px solid rgba(227,185,117,0.6);
+  }
+  .oriente-check li::after{
+    content:""; position:absolute; left:4.5px; top:6.5px; width:6px; height:3.5px;
+    border-left:1.5px solid #E3B975; border-bottom:1.5px solid #E3B975; transform:rotate(-45deg);
+  }
+  .oriente-check-nota{ font-size:13px; color:#C9AEB9; margin:0; }
+  .oriente-link{
+    display:inline-flex; align-items:center; gap:8px; margin-top: 24px; padding: 11px 22px;
+    font-size:14px; font-weight:600; color:#fff; text-decoration:none;
+    border: 1.5px solid rgba(227,185,117,0.6); border-radius: 4px; transition: background 0.18s ease, border-color 0.18s ease;
+  }
+  .oriente-link:hover{ background: rgba(227,185,117,0.12); border-color:#E3B975; }
+  .oriente-link::after{ content:"→"; font-size:15px; }
   .oriente-pilares{ font-size:13px; color:#E3B975; margin-top:6px; }
   .os-card:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(67,30,51,0.08); }
   .os-card h4{ font-size:16px; color: var(--bordeaux-escuro); margin-bottom:10px; }
@@ -474,7 +514,7 @@
   /* footer */
   footer{ background: var(--bordeaux-escuro); color:#E8D9DE; padding: 60px 0 30px; font-size: 14px; }
   .footer-grid{ display:grid; grid-template-columns: 1.3fr 1fr 1fr 1fr; gap: 40px; text-align:left; padding-bottom: 40px; }
-  .footer-col img{ height: 26px; width:auto; margin-bottom: 16px; filter: brightness(0) invert(1); }
+  .footer-col img{ height: 36px; width:auto; margin-bottom: 16px; filter: brightness(0) invert(1); }
   .footer-col p{ font-size: 13.5px; line-height:1.6; color:#C9B2BE; }
   .footer-col h4{ font-family: Calibri, sans-serif; font-size: 13px; color:#fff; font-weight:700; letter-spacing:0.03em; margin-bottom: 16px; }
   .footer-col ul{ list-style:none; }
@@ -564,6 +604,7 @@
     .dor-grid{ grid-template-columns: 1fr; }
     .bastidores-grid{ grid-template-columns: 1fr 1fr; }
     .oriente-passos{ grid-template-columns: 1fr; gap: 24px; }
+    .oriente-check{ grid-template-columns: 1fr; }
     .oriente-passos::before{ display:none; }
     .outros-servicos-grid{ grid-template-columns: 1fr; }
     .passos{ grid-template-columns: 1fr 1fr; }
@@ -730,28 +771,50 @@
     <p class="lead">Diagnóstico pronto em 2 semanas. Estrutura completa rodando em até 90 dias. Quatro frentes, uma metodologia só.</p>
 
     <div class="oriente-box">
+      <svg class="oriente-watermark" viewBox="0 0 200 200" fill="none" stroke="#fff" stroke-width="0.8" aria-hidden="true">
+        <circle cx="100" cy="100" r="92"/>
+        <circle cx="100" cy="100" r="70"/>
+        <line x1="100" y1="2" x2="100" y2="198"/>
+        <line x1="2" y1="100" x2="198" y2="100"/>
+        <line x1="29" y1="29" x2="171" y2="171"/>
+        <line x1="171" y1="29" x2="29" y2="171"/>
+        <path d="M100 20 L110 100 L100 180 L90 100 Z" fill="#fff" stroke="none" opacity="0.6"/>
+        <text x="100" y="16" text-anchor="middle" font-size="11" fill="#fff" stroke="none" font-family="Georgia, serif">N</text>
+      </svg>
       <div class="oriente-eyebrow">Serviço principal</div>
       <h3>Jornada Oriente</h3>
       <p>Nosso método completo de estruturação organizacional, em três etapas conectadas, do diagnóstico até o plano rodando de verdade no dia a dia do time.</p>
       <div class="oriente-passos">
         <div class="oriente-passo">
-          <div class="n">1</div>
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+          <span class="passo-num">Etapa 01</span>
           <h4>Diagnóstico</h4>
           <p>Formulário estruturado com sócios e equipe-chave, seguido de entrevistas presenciais. Mapeamos cinco pilares: estratégia, pessoas, operações, financeiro e governança.</p>
         </div>
         <div class="oriente-passo">
-          <div class="n">2</div>
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg></div>
+          <span class="passo-num">Etapa 02</span>
           <h4>Mapa de Orientação</h4>
           <p>O diagnóstico vira plano de ação priorizado em ciclos de 30, 60 e 90 dias: primeiro o mapa de decisão (quem decide o quê), depois estrutura formal, por último cultura documentada.</p>
         </div>
         <div class="oriente-passo">
-          <div class="n">3</div>
+          <div class="n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+          <span class="passo-num">Etapa 03</span>
           <h4>Trilha de Desenvolvimento</h4>
           <p>Rituais de gestão semanais, supervisão de processos e indicadores de performance acompanhados de perto, até o plano virar rotina do time e a empresa ganhar autonomia pra tocar sozinha.</p>
         </div>
       </div>
       <div class="oriente-entregaveis">
-        <strong>O que fica com a empresa:</strong> diagnóstico documentado dos 5 pilares, mapa de riscos organizacionais, mapa de decisão por função, estrutura organizacional formal, dashboard de indicadores e manual de cultura. Tudo documentado, e cada entregável é propriedade da empresa.
+        <strong>O que fica com a empresa</strong>
+        <ul class="oriente-check">
+          <li>Diagnóstico documentado dos 5 pilares</li>
+          <li>Mapa de riscos organizacionais</li>
+          <li>Mapa de decisão por função</li>
+          <li>Estrutura organizacional formal</li>
+          <li>Dashboard de indicadores</li>
+          <li>Manual de cultura</li>
+        </ul>
+        <p class="oriente-check-nota">Tudo documentado, e cada entregável é propriedade da empresa.</p>
       </div>
       <a href="servicos/jornada-oriente.html" class="oriente-link">Ver página completa da Jornada Oriente</a>
     </div>
@@ -1220,7 +1283,7 @@
 <section class="contato" id="contato">
   <div class="wrap">
     <img src="assets/logo-branca.png" alt="EXPLORE" class="contato-logo" width="491" height="253" loading="lazy">
-    <span class="kicker" style="color:#E3B975">Vamos conversar</span>
+    <span class="kicker" style="color:#E3B975; --kicker-color:#E3B975;">Vamos conversar</span>
     <h2>Conte um pouco sobre sua empresa</h2>
     <p class="lead">Preencha o formulário abaixo. Respondemos em até 1 dia útil.</p>
     <div class="contato-grid">
@@ -1327,6 +1390,7 @@
 </footer>
 
 <button class="voltar-topo" id="voltarTopo" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#612B4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
   </button>
 
 <a class="wa-float" href="https://wa.me/5521972593975" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
