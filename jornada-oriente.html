@@ -117,17 +117,29 @@
   .servico-banner{ width:100%; overflow:hidden; margin: 36px 0 0; aspect-ratio: 2.6; background: linear-gradient(135deg, var(--bordeaux) 0%, var(--brass) 100%); }
   .servico-banner img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-  .ideal-se{ background: var(--paper-alt); padding: 52px 0; }
+  .ideal-se{ background: var(--paper-alt); padding: 60px 0; }
   .ideal-se .wrap{ max-width: 1000px; }
-  .ideal-se h2{ font-size: 22px; margin-bottom: 26px; }
+  .ideal-se h2{ font-size: 22px; margin-bottom: 30px; }
   .ideal-se-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1px; background: var(--line); border:1px solid var(--line); }
-  .ideal-item{ background: var(--paper); padding: 26px 22px; border-top: 3px solid var(--brass); box-shadow: 0 3px 10px rgba(67,30,51,0.08); }
-  .ideal-item svg{ width:22px; height:22px; margin-bottom:14px; color: var(--brass-text); }
-  .ideal-item p{ font-size: 15px; color: var(--ink); line-height:1.5; }
+  .ideal-item{
+    background: var(--paper); padding: 28px 26px; border-top: 3px solid var(--brass);
+    box-shadow: 0 4px 14px rgba(67,30,51,0.09); display:flex; gap:16px; align-items:flex-start;
+  }
+  .ideal-item .ideal-icone{
+    flex-shrink:0; width:34px; height:34px; border-radius:50%; background: var(--bordeaux);
+    display:flex; align-items:center; justify-content:center; box-shadow: 0 3px 8px rgba(67,30,51,0.25);
+  }
+  .ideal-item svg{ width:16px; height:16px; color: #E3B975; }
+  .ideal-item p{ font-size: 15px; color: var(--ink); line-height:1.5; padding-top:4px; }
 
-  .destaque-servico{ padding: 50px 0; text-align:center; }
+  .destaque-servico{ padding: 60px 0; text-align:center; position:relative; }
   .destaque-servico .wrap{ max-width: 720px; }
-  .destaque-servico p{ font-family: Georgia, "Times New Roman", serif; font-style:italic; font-size: 24px; line-height:1.4; color: var(--bordeaux-escuro); }
+  .destaque-servico::before{
+    content:"“"; display:block; font-family: Georgia, "Times New Roman", serif; font-size: 90px; line-height:1;
+    color: var(--brass); opacity:0.35; margin-bottom: -20px;
+  }
+  .destaque-servico p{ font-family: Georgia, "Times New Roman", serif; font-style:italic; font-size: 26px; line-height:1.45; color: var(--bordeaux-escuro); }
+  .destaque-servico .linha{ width:60px; height:2px; background: var(--brass); margin: 24px auto 0; }
 
   .metodologia{ padding: 20px 0 56px; }
   .metodologia .wrap{ max-width: 1000px; }
@@ -135,9 +147,10 @@
   .metodologia-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 30px 44px; }
   .meto-passo{ display:grid; grid-template-columns: 40px 1fr; gap: 18px; }
   .meto-passo .n{
-    width:38px; height:38px; border-radius:50%; background: var(--paper); border:2px solid var(--brass);
-    color: var(--brass-text); font-family: Georgia, serif; font-size: 16px; font-weight:700;
+    width:38px; height:38px; border-radius:50%; background: var(--bordeaux); border:none;
+    color: #E3B975; font-family: Georgia, serif; font-size: 16px; font-weight:700;
     display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 3px 8px rgba(67,30,51,0.25);
   }
   .meto-passo h3{ font-size: 17px; margin-bottom: 8px; }
   .meto-passo p{ font-size: 15px; color: var(--ink-soft); }
@@ -270,16 +283,17 @@
   <div class="wrap">
     <h2>Ideal se...</h2>
     <div class="ideal-se-grid">
-      <div class="ideal-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Toda decisão importante ainda passa por você</p></div>
-      <div class="ideal-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>Processos importantes moram só na cabeça de uma pessoa</p></div>
-      <div class="ideal-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg><p>O jeito que funcionava com 15 colaboradores não aguenta mais com 50.</p></div>
+      <div class="ideal-item"><div class="ideal-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div><p>Toda decisão importante ainda passa por você</p></div>
+      <div class="ideal-item"><div class="ideal-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div><p>Processos importantes moram só na cabeça de uma pessoa</p></div>
+      <div class="ideal-item"><div class="ideal-icone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></div><p>O jeito que funcionava com 15 colaboradores não aguenta mais com 50.</p></div>
     </div>
   </div>
 </section>
 
 <section class="destaque-servico">
   <div class="wrap">
-    <p>"O jeito de gerir que funcionava com 15 pessoas não escala sozinho com 50."</p>
+    <p>O jeito de gerir que funcionava com 15 pessoas não escala sozinho com 50.</p>
+    <div class="linha"></div>
   </div>
 </section>
 
