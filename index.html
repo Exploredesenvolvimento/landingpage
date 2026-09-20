@@ -203,8 +203,17 @@
   .btn-outline:hover{ background: var(--bordeaux); color:#fff; }
 
   /* hero */
-  .hero-banner{ width:100%; overflow:hidden; aspect-ratio: 2.4; }
+  .hero-banner{ width:100%; overflow:hidden; aspect-ratio: 2; position:relative; }
   .hero-banner img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .hero-carousel .hc-slide{
+    position:absolute; inset:0; width:100%; height:100%;
+    opacity:0; transition: opacity 1.4s ease; display:block;
+  }
+  .hero-carousel .hc-slide.is-active{ opacity:1; }
+  .hero-carousel .hc-slide:not(.is-active){ pointer-events:none; }
+  @media (prefers-reduced-motion: reduce){
+    .hero-carousel .hc-slide{ transition:none; }
+  }
   .hero{ padding: 88px 0 80px; position: relative; }
   .hero .wrap{ position: relative; z-index:1; }
   .hero .wrap{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items:center; }
@@ -691,8 +700,23 @@
   </div>
 </section>
 
-<div class="hero-banner">
-  <img src="assets/hero-banner-diagrama.svg" alt="Diagrama mostrando a transição de uma operação sem estrutura clara para uma gestão organizada nos 5 pilares: Estratégia, Pessoas, Operações, Financeiro e Governança" loading="lazy">
+<div class="hero-banner hero-carousel" role="group" aria-label="Fotos de bastidores da EXPLORE em campo">
+  <picture class="hc-slide is-active">
+    <source srcset="assets/hero-1.webp" type="image/webp">
+    <img src="assets/hero-1.jpg" alt="Roda de conversa durante um encontro de desenvolvimento com a EXPLORE">
+  </picture>
+  <picture class="hc-slide">
+    <source srcset="assets/hero-2.webp" type="image/webp">
+    <img src="assets/hero-2.jpg" alt="Equipe em dinâmica de coordenação durante encontro de integração">
+  </picture>
+  <picture class="hc-slide">
+    <source srcset="assets/hero-3.webp" type="image/webp">
+    <img src="assets/hero-3.jpg" alt="Dinâmica de confiança em equipe durante encontro de desenvolvimento">
+  </picture>
+  <picture class="hc-slide">
+    <source srcset="assets/hero-4.webp" type="image/webp">
+    <img src="assets/hero-4.jpg" alt="Equipe comemorando ao final de uma dinâmica de integração">
+  </picture>
 </div>
 
 <section class="dor">
@@ -1638,6 +1662,20 @@
       textoEl.textContent = texto;
       resultado.classList.add('ativa');
     }
+  })();
+
+  // hero carousel: crossfade rotation
+  (function(){
+    var slides = document.querySelectorAll('.hero-carousel .hc-slide');
+    if (slides.length < 2) return;
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+    var atual = 0;
+    setInterval(function(){
+      slides[atual].classList.remove('is-active');
+      atual = (atual + 1) % slides.length;
+      slides[atual].classList.add('is-active');
+    }, 5000);
   })();
 </script>
 
