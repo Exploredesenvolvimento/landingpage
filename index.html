@@ -39,7 +39,6 @@
   "telephone": "+5521972593975",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Rua Araguaia, 1215",
     "addressLocality": "Rio de Janeiro",
     "addressRegion": "RJ",
     "addressCountry": "BR"
@@ -149,6 +148,7 @@
     color: var(--ink);
     background: var(--paper);
     line-height: 1.55;
+    font-size: 17px;
   }
   img{ max-width:100%; display:block; }
   a{ color: inherit; }
@@ -165,7 +165,7 @@
     mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0 C12.8 6.8 13.2 9.6 24 12 C13.2 14.4 12.8 17.2 12 24 C11.2 17.2 10.8 14.4 0 12 C10.8 9.6 11.2 6.8 12 0 Z"/></svg>');
     mask-size: contain; mask-repeat: no-repeat; mask-position: center;
   }
-  .lead{ font-size: 18px; color: var(--ink-soft); max-width: 640px; }
+  .lead{ font-size: 19.5px; color: var(--ink-soft); max-width: 640px; }
 
   /* header */
   header{
@@ -292,7 +292,7 @@
   .dor .kicker::before{ background: #E3B975; }
   .dor h2{ color:#fff; }
   .dor .lead{ color:#E8D9DE; }
-  .dor-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.15); margin-top: 40px; }
+  .dor-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.15); margin-top: 40px; }
   .dor-card{ background: var(--paper); padding: 30px; border-top: 3px solid var(--brass); box-shadow: 0 3px 10px rgba(0,0,0,0.12); transition: transform 0.18s ease, box-shadow 0.18s ease; }
   .dor-card svg{ width:26px; height:26px; margin-bottom:16px; }
   .dor-card:hover{ transform: translateY(-4px); box-shadow: 0 10px 26px rgba(0,0,0,0.25); }
@@ -502,7 +502,7 @@
   .consent input{ margin-top: 3px; }
   .contato .btn{ background: var(--brass); color: #2E1524; }
   .contato .btn:hover{ background:#CB9A50; }
-  .contato-logo{ height: 30px; width:auto; margin-bottom: 22px; }
+  .contato-logo{ height: 40px; width:auto; margin-bottom: 22px; }
   .contato-info h3{ color:#fff; font-size:18px; margin-bottom:14px; }
   .contato-info p{ color:#E8D9DE; font-size:14.5px; margin-bottom: 10px; }
 
@@ -694,7 +694,7 @@
 <div class="hero-banner">
   <picture>
     <source srcset="assets/hero-banner.webp" type="image/webp">
-    <img src="assets/hero-banner.jpg" alt="Equipe reunida durante um encontro presencial de desenvolvimento com a EXPLORE" width="1200" height="500">
+    <img src="assets/hero-banner.jpg" alt="Equipe reunida em um encontro presencial de desenvolvimento profissional" width="1200" height="500">
   </picture>
 </div>
 
@@ -839,12 +839,12 @@
         <a href="servicos/recrutamento-selecao.html" class="os-link">Ver página completa</a>
       </div>
       <div class="os-card">
-        <h4>Treinamentos e desenvolvimento de lideranças</h4>
+        <h4>Treinamentos de lideranças e equipe</h4>
         <p>Programas vivenciais de liderança, comunicação e gestão de pessoas, construídos a partir da avaliação comportamental real da equipe.</p>
         <ul>
           <li>Avaliação comportamental de cada participante</li>
           <li>Devolutiva coletiva de perfis da equipe</li>
-          <li>Dinâmicas práticas com debriefing conectado ao trabalho</li>
+          <li>Experienciais sistêmicas: dinâmicas práticas com debriefing conectado ao trabalho</li>
           <li>Formato presencial ou híbrido, sob medida pro porte do time</li>
         </ul>
         <details class="os-saiba-mais">
@@ -856,10 +856,10 @@
       </div>
       <div class="os-card">
         <h4>Gestão de riscos psicossociais</h4>
-        <p>Estruturamos o mapeamento e o PGR de riscos psicossociais exigidos pela NR-1, com fiscalização já em vigor desde maio de 2026.</p>
+        <p>Estruturamos o mapeamento e a gestão de riscos psicossociais com base no PGR, exigidos pela NR-1, com fiscalização já em vigor desde maio de 2026.</p>
         <ul>
           <li>Mapeamento de riscos por função e setor</li>
-          <li>PGR (Programa de Gerenciamento de Riscos) documentado</li>
+          <li>Gestão de riscos psicossociais estruturada com base no PGR</li>
           <li>Plano de ação com prazos e responsáveis</li>
           <li>Capacitação de lideranças para identificar sinais de risco</li>
         </ul>
@@ -1082,7 +1082,7 @@
       <div class="bastidor-item">
         <picture>
           <source srcset="assets/jln-presenter.webp" type="image/webp">
-          <img src="assets/jln-presenter.jpg" alt="Facilitador da EXPLORE conduzindo treinamento remoto" loading="lazy">
+          <img src="assets/jln-presenter.jpg" alt="Sessão de treinamento conduzida em formato remoto" loading="lazy">
         </picture>
         <div class="bastidor-legenda">Sessão de treinamento conduzida remotamente</div>
       </div>
@@ -1321,7 +1321,7 @@
       <div class="contato-info">
         <h3>Prefere outro canal?</h3>
         <p>WhatsApp: <a href="https://wa.me/5521972593975" target="_blank" rel="noopener" style="color:#fff; text-decoration:underline;">+55 21 97259-3975</a></p>
-        <p>Rua Araguaia, 1215, Rio de Janeiro, RJ</p>
+        <p>Rio de Janeiro, RJ</p>
         <p>Atendimento em todo o Brasil, de forma remota e presencial, de segunda a sexta, das 9h às 18h.</p>
       </div>
     </div>
@@ -1370,7 +1370,7 @@
         <ul>
           <li><a href="servicos/jornada-oriente.html">Jornada Oriente</a></li>
           <li><a href="servicos/recrutamento-selecao.html">Recrutamento e Seleção</a></li>
-          <li><a href="servicos/treinamentos-liderancas.html">Treinamentos e Lideranças</a></li>
+          <li><a href="servicos/treinamentos-liderancas.html">Treinamentos de Lideranças e Equipe</a></li>
           <li><a href="servicos/gestao-riscos-psicossociais.html">Riscos Psicossociais (NR-1)</a></li>
         </ul>
       </div>
